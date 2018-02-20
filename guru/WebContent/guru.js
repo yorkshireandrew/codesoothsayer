@@ -34,18 +34,18 @@ function apply_content(content){
 function set_text_visibility(value){
 	var text_visibility_element = document.getElementById("content_visibility");
 	if(value == true){
-		text_visibility_element.display = "block-inline";
+		text_visibility_element.style = "display:block-inline";
 	}else{
-		text_visibility_element.display = "none";
+		text_visibility_element.style = "display:none";
 	}
 }
 
 function set_image_visiblity(value){
 	var image_visibility_element = document.getElementById("image_visibility");	
 	if(value == true){
-		image_visibility_element.display = "block-inline";
+		image_visibility_element.style = "display:block-inline";
 	}else{
-		image_visibility_element.display = "none";
+		image_visibility_element.style = "display:none";
 	}	
 }
 
