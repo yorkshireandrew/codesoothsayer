@@ -3,7 +3,7 @@ var TITLE_FONT_SIZE_RATIO = 0.03;
 var INTERVAL_SECS = 10;
 var RANDOMNESS = 0.3;
 
-var less_random_index_generator = new LessRandomIndexGenerator(content.length, RANDOMNESS);
+var semi_random_index_generator = new SemiRandomIndexGenerator(content.length, RANDOMNESS);
 
 class Content{
 	constructor(selected_content){
@@ -79,7 +79,7 @@ function fontSizeCss(fontsize){
 
 function load() {
 	resizeHandler();
-	var l = less_random_index_generator;
+	var l = semi_random_index_generator;
 	console.log([l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next()])
 	var content_to_apply = choose_content();
 	apply_content(content_to_apply);
