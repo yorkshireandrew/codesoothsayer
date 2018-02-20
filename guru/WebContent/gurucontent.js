@@ -10,6 +10,7 @@ var content = [
 		["number 4", 
 `number four uses
 a template
+
 literal`, "", true,false]
 
 ]

@@ -64,7 +64,7 @@ class SemiRandomIndexGenerator{
 	parse_string(input){
 		bits = input.split(",");
 		var result = [];
-		bits.forEach(function(element){result.push(ParseInt(element))})
+		bits.forEach(function(element){result.push(ParseInt(element))});
 		return result;
 	}
 	
@@ -100,4 +100,17 @@ class SemiRandomIndexGenerator{
 		if(proposed_chomp > 0) return proposed_chomp;
 		return 1;
 	}
+	
+	as_string(){
+		var result = "";
+		var stack_elements = this.stack;
+		stack_elements.forEach(function(element){
+			result = result + element;
+			result = result + ",";
+		});
+		result = result.substr(0,result.length-1);
+		return result;
+	}
+	
+	
 }
