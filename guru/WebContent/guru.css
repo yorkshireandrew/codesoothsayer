@@ -1,0 +1,43 @@
+#titlebar_outer{
+	border: solid 2px black;
+	border-radius: 5px;
+	background-color: blue;
+}
+
+#titlebar{
+	background-color: blue;
+	border-collapse: collapse;
+	padding: 1px;
+	margin: 5px;
+}
+
+#titlebar td{
+	padding: 0px;
+	margin: 0px;
+	/*border: solid 1px black;*/
+}
+
+#titlebar .imagebox{
+	width: 10%;
+}
+
+#titlebar img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#titlebar #title{
+	padding: 10px;
+	background: white;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	float: left;
+	height: 100%;
+	border: solid 1px black;
+	border-radius: 10px;
+}
+
+#content {
+	border: solid 1px black;
+}
