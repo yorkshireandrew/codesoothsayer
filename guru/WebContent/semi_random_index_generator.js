@@ -52,7 +52,7 @@ class SemiRandomIndexGenerator{
 		});
 		
 		while(stack_size > 0){
-			var reduction = new LessRandomIndexGeneratorReduction(random_collection);
+			var reduction = new SemiRandomIndexGeneratorReduction(random_collection);
 			this.stack.push(reduction.selected);
 			random_collection = reduction.remaining;
 			stack_size = stack_size - 1;
@@ -70,7 +70,7 @@ class SemiRandomIndexGenerator{
 	
 	next(){
 		var retval = this.stack.shift();
-		var reduction = new LessRandomIndexGeneratorReduction(this.pool);
+		var reduction = new SemiRandomIndexGeneratorReduction(this.pool);
 		this.pool = reduction.remaining;
 		this.pool.push(retval);
 		this.stack.push(reduction.selected);
@@ -88,7 +88,7 @@ class SemiRandomIndexGenerator{
 	randomise_array(available){
 		var retval = [];
 		while(available.length > 0){
-			var reduction = new LessRandomIndexGeneratorReduction(available);
+			var reduction = new SemiRandomIndexGeneratorReduction(available);
 			retval.push(reduction.selected);
 			available = reduction.remaining;
 		}
