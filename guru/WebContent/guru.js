@@ -22,8 +22,8 @@ function apply_content(content){
 	var image_element = document.getElementById("image");
 	var guru_image_element = document.getElementById("guru_image");
 	
-	title_element.innerHTML = content.title;
-	text_element.innerHTML = content.text;
+	title_element.innerHTML = convert_to_html(content.title);
+	text_element.innerHTML = convert_to_html(content.text);
 	image_element.src = content.image_src;
 	guru_image_element.src = guru_image_picker.guru_img_src_from_content(content)
 
@@ -77,6 +77,27 @@ function borderRadiusCss(radius){
 
 function fontSizeCss(fontsize){
 	return "font-size: " +fontsize+"px;"
+}
+
+function replace_all(target, replacement, text){
+	var previous = "";
+	var current = text;
+	while(previous != current){
+		previous = current;
+		current = current.replace(target, replacement);
+	}
+	return current;
+}
+
+function convert_to_html(text){
+	var result = replace_all("&", "<<oh_got_an_ampersand>>", text);
+	result = replace_all("<<oh_got_an_ampersand>>", "&amp;", result);
+	result = replace_all("'", "&apos;", result);
+	result = replace_all("\"", "&quot;", result);
+	result = replace_all(">", "&gt;", result);
+	result = replace_all("<", "&lt;", result);
+	result = result.replace(/(?:\r\n|\r|\n)/g, '<br />');
+	return result;	
 }
 
 function load() {
