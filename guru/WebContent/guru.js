@@ -81,6 +81,8 @@ function load() {
 	resizeHandler();
 	var l = semi_random_index_generator;
 	console.log([l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next()])
+	var gip = new GuruImagePicker();
+	console.log("gip=" + gip.guru_max);
 	var content_to_apply = choose_content();
 	apply_content(content_to_apply);
 }

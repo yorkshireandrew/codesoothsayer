@@ -39,25 +39,25 @@ class SemiRandomIndexGenerator{
 	initialise_from_string(collection_size, randomness, input){
 		var stack_size = collection_size - this.compute_chomp(collection_size, randomness);
 		var random_collection = this.randomise_array(this.filled_ordered_array(collection_size));
-		this.stack = [];
+		var stack = [];
 		
 		var parsed_input = this.parse_string(input);
 		parsed_input.forEach(function(element){
 			if(stack_size > 0){
 				var picked_list = new PickedList(random_collection, element);
 				random_collection = picked_list.remaining; 
-				this.stack.push(element);
+				stack.push(element);
 				stack_size = stack_size - 1;
 			}
 		});
 		
 		while(stack_size > 0){
 			var reduction = new SemiRandomIndexGeneratorReduction(random_collection);
-			this.stack.push(reduction.selected);
+			stack.push(reduction.selected);
 			random_collection = reduction.remaining;
 			stack_size = stack_size - 1;
 		}
-		
+		this.stack = stack;
 		this.pool = random_collection;
 	}
 	
