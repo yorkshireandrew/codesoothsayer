@@ -4,7 +4,7 @@
  */
 
 var gurus = [
-	["img\mybuddab.png", 3],
-	["img\mywizard.png", 1],
-	["img\mywizard2b.png", 1]
+	["img/mybuddab.png", 3],
+	["img/mywizard.png", 1],
+	["img/mywizard2b.png", 1]
 ]
