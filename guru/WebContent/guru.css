@@ -32,7 +32,8 @@
 	background: white;
 	display: block-inline;
 	padding: 50px;
-	border: solid 1px black;
+	border: solid black;
+    border-width: 2px 2px 2px 0px;
 	border-radius: 10px;
 	background: white;
 	float: left;
