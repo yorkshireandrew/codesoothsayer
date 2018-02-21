@@ -10,11 +10,15 @@ var guru_image_picker = null;
 class Content{
 	constructor(selected_content){
 		this.section = selected_content[0];
-		this.title = selected_content[1];
+		this.title = convert_to_html(selected_content[1]);
 		this.text = selected_content[2];
 		this.image_src = selected_content[3];
-		this.text_on = selected_content[4];
-		this.image_on = selected_content[5];		
+		
+		// escape HTML if flag is set
+		if(selected_content[4])this.text = convert_to_html(this.text);
+		
+		this.text_on = selected_content[5];
+		this.image_on = selected_content[6];		
 	}
 }
 
@@ -25,9 +29,9 @@ function apply_content(content){
 	var image_element = document.getElementById("image");
 	var guru_image_element = document.getElementById("guru_image");
 	
-	section_element.innerHTML = convert_to_html(content.section);
-	title_element.innerHTML = convert_to_html(content.title);
-	text_element.innerHTML = convert_to_html(content.text);
+	section_element.innerHTML = content.section;
+	title_element.innerHTML = content.title;
+	text_element.innerHTML = content.text;
 	image_element.src = content.image_src;
 	guru_image_element.src = guru_image_picker.guru_img_src_from_content(content)
 
@@ -127,8 +131,8 @@ function convert_to_html(text){
 	result = replace_all("<<oh_got_an_ampersand>>", "&amp;", result);
 	result = replace_all("'", "&apos;", result);
 	result = replace_all("\"", "&quot;", result);
-	result = replace_all(">>", "&gt;", result);
-	result = replace_all("<<", "&lt;", result);
+	result = replace_all(">", "&gt;", result);
+	result = replace_all("<", "&lt;", result);
 	result = result.replace(/(?:\r\n|\r|\n)/g, '<br />');
 	return result;	
 }
