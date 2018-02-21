@@ -127,8 +127,8 @@ function convert_to_html(text){
 	result = replace_all("<<oh_got_an_ampersand>>", "&amp;", result);
 	result = replace_all("'", "&apos;", result);
 	result = replace_all("\"", "&quot;", result);
-	result = replace_all(">", "&gt;", result);
-	result = replace_all("<", "&lt;", result);
+	result = replace_all(">>", "&gt;", result);
+	result = replace_all("<<", "&lt;", result);
 	result = result.replace(/(?:\r\n|\r|\n)/g, '<br />');
 	return result;	
 }
