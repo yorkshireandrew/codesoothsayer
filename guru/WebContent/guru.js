@@ -75,15 +75,21 @@ function resizeHandler(){
 }
 
 function titleBorderRadiusForWidth(width){
-	return Math.floor(width * TITLE_BORDER_RADIUS_RATIO);
+	var size = Math.floor(width * TITLE_BORDER_RADIUS_RATIO);
+	if(size < 10)return 10;
+	return size;
 }
 
 function titleFontSizeForWidth(width){
-	return Math.floor(width * TITLE_FONT_SIZE_RATIO);
+	var size = Math.floor(width * TITLE_FONT_SIZE_RATIO);
+	if(size < 10)return 10;
+	return size;
 }
 
 function sectionFontSizeForWidth(width){
-	return Math.floor(width * SECTION_FONT_SIZE_RATIO);
+	var size = Math.floor(width * SECTION_FONT_SIZE_RATIO);
+	if(size < 10)return 10;
+	return size;
 }
 
 function borderRadiusCss(radius){
