@@ -43,11 +43,13 @@ class SemiRandomIndexGenerator{
 		
 		var parsed_input = this.parse_string(input);
 		parsed_input.forEach(function(element){
-			if(stack_size > 0){
-				var picked_list = new PickedList(random_collection, element);
-				random_collection = picked_list.remaining; 
-				stack.push(element);
-				stack_size = stack_size - 1;
+			if(element){
+				if(stack_size > 0){
+					var picked_list = new PickedList(random_collection, element);
+					random_collection = picked_list.remaining; 
+					stack.push(element);
+					stack_size = stack_size - 1;
+				}
 			}
 		});
 		
