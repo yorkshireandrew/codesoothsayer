@@ -9,20 +9,23 @@ var guru_image_picker = null;
 
 class Content{
 	constructor(selected_content){
-		this.title = selected_content[0];
-		this.text = selected_content[1];
-		this.image_src = selected_content[2];
-		this.text_on = selected_content[3];
-		this.image_on = selected_content[4];		
+		this.section = selected_content[0];
+		this.title = selected_content[1];
+		this.text = selected_content[2];
+		this.image_src = selected_content[3];
+		this.text_on = selected_content[4];
+		this.image_on = selected_content[5];		
 	}
 }
 
 function apply_content(content){
+	var section_element = document.getElementById("section");
 	var title_element = document.getElementById("title");
 	var text_element = document.getElementById("content");
 	var image_element = document.getElementById("image");
 	var guru_image_element = document.getElementById("guru_image");
 	
+	section_element.innerHTML = convert_to_html(content.section);
 	title_element.innerHTML = convert_to_html(content.title);
 	text_element.innerHTML = convert_to_html(content.text);
 	image_element.src = content.image_src;

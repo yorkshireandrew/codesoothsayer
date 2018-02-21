@@ -27,9 +27,10 @@ class GuruImagePicker {
 	}
 	
 	number_from_content(content){
-		var result = content.title.length; // title
-		var result = result + content.text.length; // content text
-		var result = result + content.image_src.length; // img src length
+		var result = content.section.length;
+		result = result + content.title.length;
+		result = result + content.text.length; 
+		result = result + content.image_src.length;
 		return result;
 	}
 }
