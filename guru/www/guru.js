@@ -137,8 +137,22 @@ function convert_to_html(text){
 	return result;	
 }
 
+function valid_content(){
+	if(content == undefined){console.log("content is undefined"); return false;}
+	var valid = true;
+	content.forEach(function(element){
+		if(element.length != 7){
+			console.log("ERROR (" + element[1] + ") content is incorrect its length is " + element.length);
+			valid = false;
+		}
+	})
+	return valid;
+}
+
 function load() {
 	resizeHandler();
+	if(!valid_content())return;
+	
 	guru_image_picker = new GuruImagePicker();
 	
 	semi_random_index_generator_cookie = getCookie("semi_random_index_generator");

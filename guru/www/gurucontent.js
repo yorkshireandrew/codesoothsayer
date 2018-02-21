@@ -47,4 +47,8 @@ Cleanly separate your happy-path from your error-path... these are two different
 ["Single responsibility principle (SRP)", "Classes and methods should be easy to describe.",
 `You should be able to describe each class in 25 words or less, ideally without using 'if','and','or',but'.  If the implementation is hard to explain, it's a bad idea.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+	
+["Single responsibility principle (SRP)", "Test error... Classes and methods should be easy to describe.",
+`You should be able to describe each class in 25 words or less, ideally without using 'if','and','or',but'.  If the implementation is hard to explain, it's a bad idea.`
+,"", ESCAPE_HTML, SHOW_CONTENT],
 ]
