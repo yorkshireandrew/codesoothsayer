@@ -1,5 +1,6 @@
 var TITLE_BORDER_RADIUS_RATIO = 0.02;
 var TITLE_FONT_SIZE_RATIO = 0.03;
+var SECTION_FONT_SIZE_RATIO = 0.0125;
 var INTERVAL_SECS = 10;
 var RANDOMNESS = 0.3;
 
@@ -58,9 +59,16 @@ function choose_content(){
 function resizeHandler(){
 	/*var wh = window.innerHeight;*/
 	var width = window.innerWidth;
-	var title_style_css = borderRadiusCss(titleBorderRadiusForWidth(width));
-	title_style_css += fontSizeCss(titleFontSizeForWidth(width));
+	
+	var bubble_style_css = borderRadiusCss(titleBorderRadiusForWidth(width));
+	bubble_style_css = bubble_style_css + paddingCss(titleBorderRadiusForWidth(width));
+    document.getElementById("bubble").style = bubble_style_css;
+    
+    var title_style_css = fontSizeCss(titleFontSizeForWidth(width));
     document.getElementById("title").style = title_style_css;
+    
+    var section_style_css = fontSizeCss(sectionFontSizeForWidth(width));
+    document.getElementById("section").style = section_style_css;
 }
 
 function titleBorderRadiusForWidth(width){
@@ -71,8 +79,16 @@ function titleFontSizeForWidth(width){
 	return Math.floor(width * TITLE_FONT_SIZE_RATIO);
 }
 
+function sectionFontSizeForWidth(width){
+	return Math.floor(width * SECTION_FONT_SIZE_RATIO);
+}
+
 function borderRadiusCss(radius){
 	return "border-radius: "+ radius+"px;"
+}
+
+function paddingCss(padding){
+	return "padding: "+ padding+"px;"
 }
 
 function fontSizeCss(fontsize){

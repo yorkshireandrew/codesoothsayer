@@ -28,16 +28,30 @@
     padding: 0px;
 }
 
-#titlebar #title{
-	padding: 10px;
+#titlebar #bubble {
 	background: white;
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	float: left;
-	height: 100%;
+	display: block-inline;
+	padding: 50px;
 	border: solid 1px black;
 	border-radius: 10px;
+	background: white;
+	float: left;
+}
+
+#titlebar #section {
+	color: red;
+	font-size: 8px;
+	font-family: Arial, sans-serif;
+	/*border: solid 1px black;*/
+}
+
+#titlebar #title{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	height: 100%;
+	/*border: solid red 1px;*/
 }
 
 #content {
 	border: solid 1px black;
+	padding: 10px;
 }
