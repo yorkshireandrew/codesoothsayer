@@ -64,14 +64,22 @@ function resizeHandler(){
 	var width = window.innerWidth;
 	
 	var bubble_style_css = borderRadiusCss(titleBorderRadiusForWidth(width));
-	bubble_style_css = bubble_style_css + paddingCss(titleBorderRadiusForWidth(width));
+	bubble_style_css += paddingCss(titleBorderRadiusForWidth(width));
     document.getElementById("bubble").style = bubble_style_css;
+    
+	var titlebar_outer_style_css = borderRadiusCss(titleBorderRadiusForWidth(width));
+	titlebar_outer_style_css += paddingCss(titleBorderRadiusForWidth(width)/2);
+    document.getElementById("titlebar_outer").style = titlebar_outer_style_css;
     
     var title_style_css = fontSizeCss(titleFontSizeForWidth(width));
     document.getElementById("title").style = title_style_css;
     
     var section_style_css = fontSizeCss(sectionFontSizeForWidth(width));
     document.getElementById("section").style = section_style_css;
+    
+	var content_style_css = borderRadiusCss(titleBorderRadiusForWidth(width));
+	content_style_css += paddingCss(titleBorderRadiusForWidth(width));
+    document.getElementById("content").style = content_style_css;   
 }
 
 function titleBorderRadiusForWidth(width){

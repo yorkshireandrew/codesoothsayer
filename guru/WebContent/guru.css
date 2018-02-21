@@ -1,11 +1,15 @@
+body{
+	background-color: #87c0f2;
+}
+
 #titlebar_outer{
 	border: solid 2px black;
 	border-radius: 5px;
-	background-color: blue;
+	background-color: #1352bf;
 }
 
 #titlebar{
-	background-color: blue;
+	/*background-color: #2294f7;*/
 	border-collapse: collapse;
 	padding: 1px;
 	margin: 5px;
@@ -33,7 +37,7 @@
 	display: block-inline;
 	padding: 50px;
 	border: solid black;
-    border-width: 2px 2px 2px 0px;
+    border-width: 1px 1px 1px 0px;
 	border-radius: 10px;
 	background: white;
 	float: left;
@@ -53,6 +57,8 @@
 }
 
 #content {
-	border: solid 1px black;
+	margin-top: 5px;
+	background: #cfe4f7;
 	padding: 10px;
+	border: solid 2px black;
 }
