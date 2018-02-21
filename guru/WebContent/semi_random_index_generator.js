@@ -62,9 +62,9 @@ class SemiRandomIndexGenerator{
 	}
 	
 	parse_string(input){
-		bits = input.split(",");
+		var bits = input.split(",");
 		var result = [];
-		bits.forEach(function(element){result.push(ParseInt(element))});
+		bits.forEach(function(element){result.push(parseInt(element))});
 		return result;
 	}
 	

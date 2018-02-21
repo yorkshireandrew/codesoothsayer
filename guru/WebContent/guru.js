@@ -128,10 +128,17 @@ function convert_to_html(text){
 function load() {
 	resizeHandler();
 	guru_image_picker = new GuruImagePicker();
-	var l = semi_random_index_generator;
-	console.log([l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next(),l.next()])
+	
+	semi_random_index_generator_cookie = getCookie("semi_random_index_generator");
+	if(semi_random_index_generator_cookie != null){
+		semi_random_index_generator.initialise_from_string(content.length, RANDOMNESS, semi_random_index_generator_cookie);
+	}
+	
 	var content_to_apply = choose_content();
 	apply_content(content_to_apply);
+	
+	var cookie = semi_random_index_generator.as_string();	
+	setCookie("semi_random_index_generator", cookie, 1);
 }
 
 window.onload = load;
