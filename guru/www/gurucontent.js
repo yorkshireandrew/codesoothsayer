@@ -1302,102 +1302,277 @@ sudo apt-get dist-upgrade
 ],
 
 
-["Security", "",
-``
+["Game development", "Have a great narrative.",
+`There should be a good story that guides the user through the product. Great gameplay and features are not sufficient by themselves. Plan for this upfront.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Make it look interesting.",
+`Do not make your product look like everything else out there, it should look and feel unique. This could be simply a case of using a different font, theme or skinning.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Care what your users think.",
+`Provide monitoring and metrics so you can observe user behaviour and provide channels so users can feedback to you and allow you to improve the product. Creating a product is the act of preparing to make money – Maintaining the product and providing a service is the act of actually making money.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Do not butt your release date directly up against the end of your private beta.",
+`You are going to need time to fix all those unexpected problems your private beta users feed back to you, otherwise what was the point in having a private beta!`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Focus on the three C s - Camera, Character and Controls.",
+`The user interface and movements should always look fluid and be fun. Complete these before moving on to things that depend on them, such as perfecting the level design.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Find the fun through testing.",
+`Its better to have a well tuned product with good game-play and functionality than it is to have one with lots of bells and whistles... Its not done until its fun! `
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Define the concept before writing the code.",
+`Defining a game's concept first helps stimulate creativity. It also allows you to focus, identify areas of risk and prioritise the high value features of the product.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Focus on what matters.",
+`Focus on the few key area that users say would make the product better. Do attempt to make every little bit of a product better without justification.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Consider designing your AI characters so they support co-op gameplay.",
+`Consider designing AI enemies to support multiple adversary, so it makes co-op gameplay possible.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "The user-interface should be separated from controlling the game.",
+`Create an interface that controls the game. The user-interface should then attach to this. This abstraction makes developing multiplayer easier, recording a user, moving to other platforms and may aid testing and debugging.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Do not use Facebook for your account management.",
+`It is likely to put people off if you do not provide alternatives. Always explain how their Facebook will be used.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
-``
+["Game development", "Playing games is a really social thing so plan to be social.",
+`Releasing a game successfully involves marketing, publicity, social media promotions and responding to the comments and wishes of your gaming community. This is going to take resources and time so consider how doing this will fit into your work-flow.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
 
+/* ============================================== */	
+/* PHILOSOPHY */
+/* ============================================== */
+
+["Philosophy", "Bugs frequently appear in paste.",
+`When cut-and-paste is necessary always take the time to ensure fields, argument names, method names, behaviour and comments of pasted code are correct for the location they get pasted into. Ensure that tests for the pasted code get written or ported across as well, do not assume it will just work.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 ],
 
 
-["Security", "",
-``
+["Philosophy", "Gathering data is only half the problem.",
+`Gathering data is half the problem, interpreting it and making it useful to humans is the other half.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
 
 
-["Security", "",
+["Philosophy", "Be open to asking for help, be open to being asked for help.",
+`Nobody can be an expert in everything - Asking someone's help is likely to save you both time in the long run. Discover who happens to be good with certain technologies, and if you happen to be good with something take the time to tell others.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "To know what is wrong with a service or concept, deliver that concept early.",
+`Prototypes and pre-releases inspire innovation. They also allow users to express their desires and identify the functionality defects that annoy them the most. Learn through iteration.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Youthful flexibility comes from removing old inflexible components.",
+`Remove obsolete components and update active components. Legacy code should be reviewed every three to five years and updated to use new architectures and services and meet new expectations and requirements, either through extensive refactoring or through replacement.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Working code is not sufficient – it must also be expressive.",
+`Commercial maintained code will be read at least ten times more often than it is written. Working code is not sufficient, it must also be expressive, easy to read and easily testable.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Seek the balance between conflicting ideals.",
+`Embrace standards and good practices but also be pragmatic. A clean code-base has no place for damaging pointless dogmatism. `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "All code costs but pseudo-code costs far less.",
+`If it is a significant component it is likely you will throw away or massively refactor your first implementation before or during its first code review. Therefore it is better for that first implementation fails early and cheaply at the design stage, than later after writing many lines of code. `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Love code in all its forms.",
+`SQL-functions, Build-scripts, Infrastructure-code, Configuration-code, Test-code and Tools all deserve to be written in a clean way and follow SOLID principles.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Difficult problems require disengagement.",
+`Intelligence, inspiration and creativity are fleeting states of mind that are impossible to attain when you are highly-focused or tired. Take a break or share the problem with others then let the brilliance of your creative subconscious deal with it and come up with an innovative solution. `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "If you are going to be fail or be late then do it early.",
+`Be honest and announce that you are going to miss a deadline or goal as soon as you become aware that this is likely to happen. This gives others opportunity to adapt to the new situation.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Haste, Apathy, Ignorance, Limited imagination, Sloth, Complexity and Pride.",
+`These are the root causes of anti-patterns... Which one caused that last code-smell?`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Delivering something sufficient in time beats delivering something exceptional too late.",
+`There are usually good business or financial reasons for deadlines being in place that should be respected. Sometimes though delivering something late or never is better than delivering something faulty, risky or appalling right now.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "In the face of ambiguity, refuse the temptation to guess.",
+`Research or keep asking questions and push back until the correct way to proceed is known. `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Errors should never pass silently.",
+`Unless they are explicitly silenced.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Practicality beats purity.",
+`Patterns, clean-coding, object orientated principles and using language idioms are all worthy goals but do should not come at the expense of simple and practical. `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Special cases aren't special enough to break the rules.",
+`If you break a rule it does not really exist anymore, so then everyone will break it.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Plan for easy maintenance.",
+`Three quarters of commercial software development is maintenance, so being readable is as vital as being functional. Consider what tools may be needed to maintain and support your services.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Worthwhile code must periodically evolve.",
+`A good system must be comprised of modular components so that it can be rebuilt from scratch every seven years. This is a necessity for commercial code so it can advance and  incorporate new features, changes in technology and increases in customer expectations.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Quality is the result of a million selfless acts of care.",
+`Making small changes to improve an application will eventually result in a quality product.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Coding is much like surgery.",
+`You do not have to take the time to do it cleanly, scientifically and in a modern manner... But if you aim to be successful and professional at it then you should.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Bad code and grumbling acts as a permission giver.",
+`Grumbling about code or sticking bad code into a code-base tempts others to also add to the mess and let it grow. A professional coder should care passionately about all the code they touch regardless of its current state and where possible pass that love of the code on to others. `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "First solve the problem, then write the code.",
+`Otherwise you will write code that does not solve the problem.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Intelligent behaviour without control is worse than simple behaviour.",
+`It is important to understand and have control over intelligent systems.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Remember Brooks law.",
+`Adding more manpower to a late software project makes it even later.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "If you just did something really good, write a script to do it again.",
+`Really good things deserve to be documented, shared and automated.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Any fool can write code a computer understands.",
+`A good programmer writes code that humans understand.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Which will cost you most - CPU hours or a developer hours.",
+`If using a difficult service, component or language is necessary to improve performance, this will increase your developer hours and is likely to have an ongoing cost. How does that developer cost compare to the cost of increasing the CPU hours available on your infrastructure.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "If you cannot explain it to a customer – then it is a bad idea.",
+``
+	,"", ESCAPE_HTML, HIDE_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "It is better to train people and risk they will leave,  than do nothing and risk they will stay.",
+``
+	,"", ESCAPE_HTML, HIDE_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Philosophy", "Code is something developers discover, not something developers own.",
+`All arrangements of realizable processes existed as a possibility in the universe before it was written down by a developer. Knowledge of discovered code should be shared so if that developer leaves, dies or goes on holiday so it does not become lost to mankind.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+/* ============================================== */	
+/* CREATIONAL PATTERNS */
+/* ============================================== */
+
+
+["Creational patterns", "",
 ``
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 ],
+
 
 
 
