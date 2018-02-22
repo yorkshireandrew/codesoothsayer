@@ -3,7 +3,7 @@ software guru (https://nodesource.com/products/nsolid) is a website that provide
 
 This github project has been set up to allow visitors to provide content in order to improve the website. 
 
-**www\guru.doc**
+**www\gurucontent.doc**
 If you just want to provide additional content, you can just edit this file and send a pull request. If we like your changes we will do the work of adding the content to the javascript and updating the website.
 
 **www\gurucontent.js**

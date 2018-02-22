@@ -79,3 +79,30 @@ body{
 	padding: 10px;
 	border: solid 2px black;
 }
+
+#footer_outer{
+	text-align: center;
+	margin-top: 5px;
+	border: solid 2px black;
+	border-radius: 5px;
+	background-color: #1352bf;
+}
+
+#footer_outer a:link{
+ border: none;
+ color: white;
+ font-weight: bold;
+ text-decoration: none;
+}
+
+#footer_outer a:visited{
+ color: white;
+ font-weight: bold;
+ text-decoration: none;
+}
+
+#footer_outer a:hover{
+ color: rgb(167,182,252);
+ font-weight: bold;
+ text-decoration: none;
+}
