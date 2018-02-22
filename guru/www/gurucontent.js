@@ -1620,132 +1620,183 @@ sudo apt-get dist-upgrade
 /* ============================================== */
 
 
-["Structural patterns", "",
-``
+["Structural patterns", "Adapter pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Adapter_pattern">Adapter pattern</a> provides the interface a client expects, using the services of a class with a different interface.
+
+Class adapters extend the existing class, whereas object adapters wrap an instance of the existing class. Class adapters have access to protected variables that object adapters does not, which may make them less brittle. Wherever possible adapters should take advantage of stable interfaces of the existing class so they are less brittle to changes of the existing class.`
+	,"designpatternsimage\adapter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "Bridge pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Bridge_pattern">Bridge pattern.</a> decouples an abstraction from its implementation allowing both to vary independently. 
+
+The abstraction is not directly linked to some implementation class (as in an interface); Instead a concrete abstraction class exists which drives a concrete implementation class via the interface the concrete implementation class wishes to expose.`
+	,"designpatternsimage\bridge_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "Composite pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Composite_pattern">Composite pattern</a> allows clients to treat individual objects and compositions of objects uniformly. Both compositions of objects and leaf objects should provide the same interface for clients to work with.`
+	,"designpatternsimage\composite_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "Decorator pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Decorator_pattern">Decorator pattern</a> allows an objects responsibilities to be cleanly separated and its behaviour to be dynamically extended or composed by keeping the same interface. Decorators may either use mix-ins and composition or be a sub-class that is used to extend a simpler class at compile time.`
+	,"designpatternsimage\decorator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "Facade pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Facade_pattern">Facade pattern</a> provides interfaces to make a complex subsystem easier to use. A facade usually reduces the number of additional dependencies a client needs in order to use the complex subsystem.`
+	,"designpatternsimage\facade_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "Flyweight pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Flyweight_pattern">Flyweight pattern</a> uses sharing so large numbers of objects can possess the same data or feature efficiently.  A flyweight serves as a normalization of how data is held in memory. In most cases the components that are shared across the large number of objects are immutable.`
+	,"designpatternsimage\flyweight_uml.JPG, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "Proxy pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Proxy_pattern">Proxy pattern</a> provide a surrogate or placeholder for another object to control access to it. For example a class that displays a temporary loading image until image data has been downloaded.`
+	,"designpatternsimage\proxy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+/* ============================================== */	
+/* STRUCTURAL PATTERNS */
+/* ============================================== */
+
+
+["Behavioural patterns", "Blackboard pattern",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Blackboard_(design_pattern)">Blackboard pattern</a>/<a target="_blank" href="https://en.wikipedia.org/wiki/Blackboard_system">Blackboard system</a> separates the responsibility of combining of information from multiple heterogeneous knowledge sources from the knowledge sources themselves, allowing the knowledge sources to be dynamically combined and configured to solve a problems. Its most likely use is within AI systems.`
+	,"designpatternsimage\blackboard_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Chain of responsibility pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern">Chain of responsibility pattern</a> avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. The request is passed along a chain until an object handles it. A common example is user-interfaces where events such as a mouse-click get handled by the clicked item, or if that item has no mouse-click handler it forwards the event on to its parent.`
+	,"designpatternsimage\cor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Command pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Command_pattern">Command pattern</a> encapsulates a work element or a request as an object, thereby allowing it to be saved, queued, logged or passed to clients. It also allows clients to prepare special contexts in which to invoke the request. Request-objects are a special case of the command pattern in which all the information necessary to fulfil some request (for example which database to use) is encapsulated within the object.`
+	,"designpatternsimage\command_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Interpreter pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Interpreter_pattern">Interpreter pattern</a> lets executable objects be composed according to a set of composition rules. Interpreters allow complex behaviour to be constructed from simple work elements and this construction to be defined in configuration, chosen by a user, or deferred until runtime.`
+	,"designpatternsimage\interpreter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Iterator pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Interpreter_pattern">Iterator pattern</a> provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.`
+	,"designpatternsimage\iterator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Layered system pattern.",
+`Allows complex tasks to be achieved by coupling together multiple objects in which each object is only responsible for performing a  fraction of the task before passing the result to another object  and handling that objects returned response. Each object knows only a small part of the overall design.
+
+Eventually the request reaches the 'core of the onion' and gets turned into a response. The response then propagates back out through the various objects (or layers), as it does so it may get combined with other information or change its type.
+
+The alternative to using a layered system pattern is to explicitly define how multiple objects are coupled together and interact within some high-level orchestrator class. An orchestrator represents a more procedural programming style but may be more expressive and offer increased flexibility, whereas the layered system approach might be considered more object orientated and loosely coupled.`
+	,"designpatternsimage\layer_uml.JPG", ESCAPE_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Mediator pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Mediator_pattern">Mediator pattern</a> defines an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it allows their interaction to vary independently. 
+
+An example of a mediator is a message queue coupled to a message handler; multiple components (which may be constantly changing or large in number) can then interact with the queue rather than with each other directly. Another mediator example is high-level orchestrator classes responsible for using multiple smaller worker objects or classes to achieve a processing activity.`
+	,"designpatternsimage\mediator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Memento pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Memento_pattern">Memento pattern</a> Without violating encapsulation, captures and externalizes an object&apos;s internal state allowing the object to be restored to this state later. Memento is frequently used to implementing undo functionality.`
+	,"designpatternsimage\memento_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Null object pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Null_object_pattern">Null object pattern</a> - rather than returning a null reference or throwing an exception if a record is not found, an object is returned to the caller that it is able to process which represents a null. 
+
+For example if the caller expects a list, then return an empty list so the caller is able to process the response, but effectively does nothing. Alternatively if the caller expects an object with a given interface, create and return a class that represents a null implementation of that interface that when processed does nothing.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Behavioural patterns", "Observer pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Observer_pattern">Observer pattern</a> defines a one-to-many dependency between objects where a state change in the observed object results in all its dependants being notified and updated automatically.`
+	,"designpatternsimage\observer_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Process manager pattern.",
+`<a target="_blank" href="https://stackoverflow.com/questions/15528015/what-is-the-difference-between-a-saga-a-process-manager-and-a-document-based-ap">Process manager pattern</a> means there is a class responsible for routing a message through multiple processing steps when the required steps may not be known at design time and may not be sequential.
+
+It is a durable event scheduler that encapsulates process specific logic and maintain a central point of control deciding what to execute next once a process is completed. Process managers maintain state so say a payment was taken from a customer the fact an order must now be sent to them is held by the process manager.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Behavioural patterns", "Responsible owner pattern",
+`Frees a client from the duty of obtaining and releasing resources.
+
+The responsible owner component obtains the resources from a factory when it is constructed. It then passes the resource into a callback or method that the client supplies. Then when this method returns or when responsible owner is disposed, it calls the dispose method on the resource it obtained (provided this provides a IDisposable interface).`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Behavioural patterns", "Saga manager pattern.",
+`<a target="_blank" href="https://stackoverflow.com/questions/15528015/what-is-the-difference-between-a-saga-a-process-manager-and-a-document-based-ap">Saga manager pattern</a> encapsulates process logic deciding what to execute next once a process is completed. A saga holds no state and makes its decisions based only on the content of the incoming message or event. So if a message to take a customer payment is processed that creates a new message containing what needs to be sent to whom, and how to refund the payment should that order not go through.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Behavioural patterns", "Special case pattern.",
+`Rather than throwing an exception, a special case object gets returned which that contains methods or a command required to handle the exceptional behaviour. This pattern is ideal for cases where there are multiple special cases where each one requires slightly different handling.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Behavioural patterns", "Specification pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Specification_pattern">Specification pattern</a> allows business rules to be combined using boolean logic. It is sometimes used as a way of combining several predicates together when filtering records.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Behavioural patterns", "State pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/State_pattern">State pattern</a> Distributes and encapsulates state specific logic across multiple classes that represent an objects state.`
+	,"designpatternsimage\state_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Strategy pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy pattern</a> lets the algorithm vary independently from clients that use it. Define a family of algorithms, then encapsulate each one and make them interchangeable.`
+	,"designpatternsimage\strategy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Behavioural patterns", "Template method pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Template_method_pattern">Template method pattern</a> defines the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm&apos;s structure.`
 	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
 ],
 
 
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+["Behavioural patterns", "Visitor pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Visitor_pattern">Visitor pattern</a> allows adding new virtual functions to a family of classes, without modifying the classes.
+
+The classes that require modification must all implement the &apos;accept&apos; method. Clients call this accept  method to perform some new action on that family of classes thereby extending their functionality. Clients are able to use this one accept method to perform a wide range of new actions by passing in a different visitor class for each specific action. A visitor class contains multiple  overridden visit methods defining how to achieve that same specific action for every class within the family. These visit methods get passed an instance on which to work.`
+	,"designpatternsimage\visitor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
 ],
 
 
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-["Structural patterns", "",
-``
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
-
-
-
-
-]
+] /* END OF CONTENT ARRAY */
