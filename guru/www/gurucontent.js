@@ -130,7 +130,7 @@ This does not mean that multiple implementation classes are required, a single i
 
 	
 ["Dependency injection (DI)", "Dependency cycles when using dependency injection can be solved.",
-`Where you have dependency cycles these can be hard to factor to dependency injection. However it can be achieved either through using an event/messaging approach or breaking the cycle with property injection (for example A => B => C … then inject A into C as a property)`
+`Where you have dependency cycles these can be hard to factor to dependency injection. However it can be achieved either through using an event/messaging approach or breaking the cycle with property injection (for example A => B => C , then inject A into C as a property)`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 	
@@ -1152,48 +1152,41 @@ myjob.wait();`
 /* ============================================== */	
 /* SECURITY */
 /* ============================================== */
-	
+
+["Security", "blah",
+`blah`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
 	
 ["Security", "HTML Injection – URLs.",
 `Ensure the URLs in pages cannot be manipulated by a well crafted query. If you create a URL in a page (e.g. HTML forms that get post-ed back to the current pages URL in order to get processed) ensure user input cannot be used to manipulate that URL. For example in PHP do not use $_SERVER['PHP_SELF'] directly, you must sanitize it by stripping out % characters and pass it through htmlentities() as well as do a final check that it is still going to your site!`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
-],
 
 
 ["Security", "HTML Injection – Javascript.",
 `Ensure user input (for example input query parameters) cannot be used to inject javascript into your response page. Otherwise an evil user can craft a URL for your site then send that evil url to someone they want to attack (say by email). When the victim then uses that URL to visit your site, your site will run that evil javascript on their machine.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "SQL Injection.",
 `Applications should use stored procedures to create, update, read and delete material on a database, so user content cannot be crafted to run arbitrary SQL. If user content is used to create SQL queries it should be escaped so it contains no special SQL characters (such as ') or html characters such as (< or >)`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Avoid using standard ports.",
 `Make it harder for evil hackers by using non standard ports, For example do not use port 22 for SSH. Also consider using tools such as netfilter to rate-limit incoming connections.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Limit access to SSH, VNC,RDP and database ports.",
 `Use firewalls to ensure access to the ports of vital services is only permitted from your businesses address ranges. Consider blocking all inbound traffic from the IP ranges of countries known for launching cyberattacks.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Use public key based logins to access servers rather than passwords.",
 `For example use public-private key pairs generated with ssh-keygen.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Disable root user login (Debian/Ubuntu).",
@@ -1205,18 +1198,14 @@ ChallengeResponseAuthentication no
 PasswordAuthentication no
 UsePAM no 
 IgnoreRhosts yes `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Limit users ssh access.",
 `Linux:
 alter sshd_config to include
 AllowUsers someone1 someone2`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Check what services you have installed and remove ones that are not needed.",
@@ -1238,32 +1227,24 @@ netstat
 -n Displays addresses and port numbers in numerical form.
 -o Displays the owning process ID associated with each connection.
 `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Check what packages you have installed and remove ones you do not need.",
 `Linux:
 sudo apt-get remove package-name`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Check accounts for empty passwords.",
 `Linux:
 cat /etc/shadow | awk -F: '($2==""){print $1}'`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "One service - once system.",
 `Use virtualisation so each service runs in its own VM or container. So if a service is successfully exploited there is a limit to the services that are affected.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Keep your operating system and applications up-to-date.",
@@ -1272,23 +1253,17 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade 
 `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Set up file and folder permissions to prevent unauthorised access.",
 `Also consider setting up separate disc or file partitions for different services.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Security", "Ensure web server services run under a user account that has limited access privileges.",
 `So that if someone does manage to be able to run some malicious code via your web server it has to run under an account that has limited privileges on services such as databases, limiting the damage.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 /* ============================================== */	
@@ -1299,406 +1274,339 @@ sudo apt-get dist-upgrade
 ["Game development", "Do not be unrealistic.",
 `Creating assets and coding features always takes more time than you think. Avoid wasting time designing and working on assets and features you do not realistically have the time to complete properly.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
 
 
 ["Game development", "Have a great narrative.",
 `There should be a good story that guides the user through the product. Great gameplay and features are not sufficient by themselves. Plan for this upfront.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
 
 
 ["Game development", "Make it look interesting.",
 `Do not make your product look like everything else out there, it should look and feel unique. This could be simply a case of using a different font, theme or skinning.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
 
 
 ["Game development", "Care what your users think.",
 `Provide monitoring and metrics so you can observe user behaviour and provide channels so users can feedback to you and allow you to improve the product. Creating a product is the act of preparing to make money – Maintaining the product and providing a service is the act of actually making money.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
 
 
 ["Game development", "Do not butt your release date directly up against the end of your private beta.",
 `You are going to need time to fix all those unexpected problems your private beta users feed back to you, otherwise what was the point in having a private beta!`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
 
 
 ["Game development", "Focus on the three C s - Camera, Character and Controls.",
 `The user interface and movements should always look fluid and be fun. Complete these before moving on to things that depend on them, such as perfecting the level design.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
 
 
 ["Game development", "Find the fun through testing.",
 `Its better to have a well tuned product with good game-play and functionality than it is to have one with lots of bells and whistles... Its not done until its fun! `
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
 
 
 ["Game development", "Define the concept before writing the code.",
 `Defining a game's concept first helps stimulate creativity. It also allows you to focus, identify areas of risk and prioritise the high value features of the product.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Game development", "Focus on what matters.",
 `Focus on the few key area that users say would make the product better. Do attempt to make every little bit of a product better without justification.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Game development", "Consider designing your AI characters so they support co-op gameplay.",
 `Consider designing AI enemies to support multiple adversary, so it makes co-op gameplay possible.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Game development", "The user-interface should be separated from controlling the game.",
 `Create an interface that controls the game. The user-interface should then attach to this. This abstraction makes developing multiplayer easier, recording a user, moving to other platforms and may aid testing and debugging.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Game development", "Do not use Facebook for your account management.",
 `It is likely to put people off if you do not provide alternatives. Always explain how their Facebook will be used.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
-
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 ["Game development", "Playing games is a really social thing so plan to be social.",
 `Releasing a game successfully involves marketing, publicity, social media promotions and responding to the comments and wishes of your gaming community. This is going to take resources and time so consider how doing this will fit into your work-flow.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 /* ============================================== */	
 /* PHILOSOPHY */
 /* ============================================== */
 
+
 ["Philosophy", "Bugs frequently appear in paste.",
 `When cut-and-paste is necessary always take the time to ensure fields, argument names, method names, behaviour and comments of pasted code are correct for the location they get pasted into. Ensure that tests for the pasted code get written or ported across as well, do not assume it will just work.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Gathering data is only half the problem.",
 `Gathering data is half the problem, interpreting it and making it useful to humans is the other half.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Be open to asking for help, be open to being asked for help.",
 `Nobody can be an expert in everything - Asking someone's help is likely to save you both time in the long run. Discover who happens to be good with certain technologies, and if you happen to be good with something take the time to tell others.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "To know what is wrong with a service or concept, deliver that concept early.",
 `Prototypes and pre-releases inspire innovation. They also allow users to express their desires and identify the functionality defects that annoy them the most. Learn through iteration.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Youthful flexibility comes from removing old inflexible components.",
 `Remove obsolete components and update active components. Legacy code should be reviewed every three to five years and updated to use new architectures and services and meet new expectations and requirements, either through extensive refactoring or through replacement.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Working code is not sufficient – it must also be expressive.",
 `Commercial maintained code will be read at least ten times more often than it is written. Working code is not sufficient, it must also be expressive, easy to read and easily testable.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Seek the balance between conflicting ideals.",
 `Embrace standards and good practices but also be pragmatic. A clean code-base has no place for damaging pointless dogmatism. `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "All code costs but pseudo-code costs far less.",
 `If it is a significant component it is likely you will throw away or massively refactor your first implementation before or during its first code review. Therefore it is better for that first implementation fails early and cheaply at the design stage, than later after writing many lines of code. `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Love code in all its forms.",
 `SQL-functions, Build-scripts, Infrastructure-code, Configuration-code, Test-code and Tools all deserve to be written in a clean way and follow SOLID principles.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Difficult problems require disengagement.",
 `Intelligence, inspiration and creativity are fleeting states of mind that are impossible to attain when you are highly-focused or tired. Take a break or share the problem with others then let the brilliance of your creative subconscious deal with it and come up with an innovative solution. `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "If you are going to be fail or be late then do it early.",
 `Be honest and announce that you are going to miss a deadline or goal as soon as you become aware that this is likely to happen. This gives others opportunity to adapt to the new situation.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Haste, Apathy, Ignorance, Limited imagination, Sloth, Complexity and Pride.",
 `These are the root causes of anti-patterns... Which one caused that last code-smell?`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Delivering something sufficient in time beats delivering something exceptional too late.",
 `There are usually good business or financial reasons for deadlines being in place that should be respected. Sometimes though delivering something late or never is better than delivering something faulty, risky or appalling right now.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "In the face of ambiguity, refuse the temptation to guess.",
 `Research or keep asking questions and push back until the correct way to proceed is known. `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Errors should never pass silently.",
 `Unless they are explicitly silenced.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Practicality beats purity.",
 `Patterns, clean-coding, object orientated principles and using language idioms are all worthy goals but do should not come at the expense of simple and practical. `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Special cases aren't special enough to break the rules.",
 `If you break a rule it does not really exist anymore, so then everyone will break it.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Plan for easy maintenance.",
 `Three quarters of commercial software development is maintenance, so being readable is as vital as being functional. Consider what tools may be needed to maintain and support your services.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Worthwhile code must periodically evolve.",
 `A good system must be comprised of modular components so that it can be rebuilt from scratch every seven years. This is a necessity for commercial code so it can advance and  incorporate new features, changes in technology and increases in customer expectations.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Quality is the result of a million selfless acts of care.",
 `Making small changes to improve an application will eventually result in a quality product.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Coding is much like surgery.",
 `You do not have to take the time to do it cleanly, scientifically and in a modern manner... But if you aim to be successful and professional at it then you should.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Bad code and grumbling acts as a permission giver.",
 `Grumbling about code or sticking bad code into a code-base tempts others to also add to the mess and let it grow. A professional coder should care passionately about all the code they touch regardless of its current state and where possible pass that love of the code on to others. `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "First solve the problem, then write the code.",
 `Otherwise you will write code that does not solve the problem.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Intelligent behaviour without control is worse than simple behaviour.",
 `It is important to understand and have control over intelligent systems.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Remember Brooks law.",
 `Adding more manpower to a late software project makes it even later.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "If you just did something really good, write a script to do it again.",
 `Really good things deserve to be documented, shared and automated.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Any fool can write code a computer understands.",
 `A good programmer writes code that humans understand.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Which will cost you most - CPU hours or a developer hours.",
 `If using a difficult service, component or language is necessary to improve performance, this will increase your developer hours and is likely to have an ongoing cost. How does that developer cost compare to the cost of increasing the CPU hours available on your infrastructure.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "If you cannot explain it to a customer – then it is a bad idea.",
-``
-	,"", ESCAPE_HTML, HIDE_CONTENT, HIDE_IMAGE],		
-],
+` `
+	,"", ESCAPE_HTML, HIDE_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "It is better to train people and risk they will leave,  than do nothing and risk they will stay.",
-``
-	,"", ESCAPE_HTML, HIDE_CONTENT, HIDE_IMAGE],		
-],
+` `
+	,"", ESCAPE_HTML, HIDE_CONTENT, HIDE_IMAGE],
 
 
 ["Philosophy", "Code is something developers discover, not something developers own.",
 `All arrangements of realizable processes existed as a possibility in the universe before it was written down by a developer. Knowledge of discovered code should be shared so if that developer leaves, dies or goes on holiday so it does not become lost to mankind.`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 /* ============================================== */	
 /* CREATIONAL PATTERNS */
 /* ============================================== */
 
-
 ["Creational patterns", "Abstract factory pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">Abstract factory pattern</a> provides an interface for creating families of related or dependent objects without specifying their concrete classes. For example an abstract factory could be used to generate the components of a user interface. If you could then choose to use a &apos;windows&apos; or &apos;mac&apos; abstract factory to get a web interface with a given style.`
-	,"designpatternsimage\abstract_factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\abstract_factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Creational patterns", "Builder pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Builder_pattern">Builder pattern</a> separates the construction of a complex object from the object being created, allowing the same construction process to create various representations or objects. Builders may hold state allowing creation to be done incrementally and the choosing of some elements of the complex object to be deferred until the appropriate time. The builder pattern also allows different build strategies to be swapped in or out.`
-	,"designpatternsimage\builder_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],			
-],
+	,"designpatternsimage\builder_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],	
 
 
 ["Creational patterns", "Factory method pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Factory_method_pattern">Factory method pattern</a> Defines the interface for creating an object (which provides some service usually via an interface) while the factory retains control over selecting which class gets instantiated. Factories are often used alongside dependency injection so that clients are able to construct objects when required, but the dependency injection framework still controls what is instantiated. `
-	,"designpatternsimage\factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],			
-],
+	,"designpatternsimage\factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],	
 
 
 ["Creational patterns", "Lazy initialization pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Lazy_initialization">Lazy initialization pattern</a> delays an expensive process, such as creation of an object, until when is first needed.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Creational patterns", "Object pool pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Object_pool_pattern">Object pool pattern</a> avoids expensive acquisition and release of resources by recycling objects that are no longer in use. Object pools can also be used to control access to a limited resource, such as database connections. A common example of an object pool is a thread-pool.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Creational patterns", "Prototype pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Prototype_pattern">Prototype pattern</a> provides a new object by copying an existing example. This allows specifying which object to create to be deferred to runtime and may provide a performance increase in situations where cloning is simple but construction is complex.`
-	,"designpatternsimage\prototype_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\prototype_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Creational patterns", "Singleton pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Singleton_pattern">Singleton pattern</a> Ensures a class has only one instance, and provide a global point of access to it. See also the similar <a target="_blank" href="https://en.wikipedia.org/wiki/Multiton_pattern">Multiton pattern</a>`
-	,"designpatternsimage\singleton_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\singleton_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Creational patterns", "Revealing module pattern.",
 `<a target="_blank" href="https://weblogs.asp.net/dwahlin/techniques-strategies-and-patterns-for-structuring-javascript-code-revealing-module-pattern">Revealing module pattern</a> is a javascript pattern allowing you to only expose the functions you want to.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 /* ============================================== */	
 /* STRUCTURAL PATTERNS */
 /* ============================================== */
 
-
 ["Structural patterns", "Adapter pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Adapter_pattern">Adapter pattern</a> provides the interface a client expects, using the services of a class with a different interface.
 
 Class adapters extend the existing class, whereas object adapters wrap an instance of the existing class. Class adapters have access to protected variables that object adapters does not, which may make them less brittle. Wherever possible adapters should take advantage of stable interfaces of the existing class so they are less brittle to changes of the existing class.`
-	,"designpatternsimage\adapter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\adapter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Bridge pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Bridge_pattern">Bridge pattern.</a> decouples an abstraction from its implementation allowing both to vary independently. 
 
 The abstraction is not directly linked to some implementation class (as in an interface); Instead a concrete abstraction class exists which drives a concrete implementation class via the interface the concrete implementation class wishes to expose.`
-	,"designpatternsimage\bridge_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\bridge_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Composite pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Composite_pattern">Composite pattern</a> allows clients to treat individual objects and compositions of objects uniformly. Both compositions of objects and leaf objects should provide the same interface for clients to work with.`
-	,"designpatternsimage\composite_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\composite_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Decorator pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Decorator_pattern">Decorator pattern</a> allows an objects responsibilities to be cleanly separated and its behaviour to be dynamically extended or composed by keeping the same interface. Decorators may either use mix-ins and composition or be a sub-class that is used to extend a simpler class at compile time.`
-	,"designpatternsimage\decorator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\decorator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Facade pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Facade_pattern">Facade pattern</a> provides interfaces to make a complex subsystem easier to use. A facade usually reduces the number of additional dependencies a client needs in order to use the complex subsystem.`
-	,"designpatternsimage\facade_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\facade_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Flyweight pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Flyweight_pattern">Flyweight pattern</a> uses sharing so large numbers of objects can possess the same data or feature efficiently.  A flyweight serves as a normalization of how data is held in memory. In most cases the components that are shared across the large number of objects are immutable.`
-	,"designpatternsimage\flyweight_uml.JPG, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\flyweight_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Proxy pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Proxy_pattern">Proxy pattern</a> provide a surrogate or placeholder for another object to control access to it. For example a class that displays a temporary loading image until image data has been downloaded.`
-	,"designpatternsimage\proxy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\proxy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 /* ============================================== */	
 /* STRUCTURAL PATTERNS */
 /* ============================================== */
 
-
 ["Behavioural patterns", "Blackboard pattern",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Blackboard_(design_pattern)">Blackboard pattern</a>/<a target="_blank" href="https://en.wikipedia.org/wiki/Blackboard_system">Blackboard system</a> separates the responsibility of combining of information from multiple heterogeneous knowledge sources from the knowledge sources themselves, allowing the knowledge sources to be dynamically combined and configured to solve a problems. Its most likely use is within AI systems.`
-	,"designpatternsimage\blackboard_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\blackboard_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Chain of responsibility pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern">Chain of responsibility pattern</a> avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. The request is passed along a chain until an object handles it. A common example is user-interfaces where events such as a mouse-click get handled by the clicked item, or if that item has no mouse-click handler it forwards the event on to its parent.`
-	,"designpatternsimage\cor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\cor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Command pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Command_pattern">Command pattern</a> encapsulates a work element or a request as an object, thereby allowing it to be saved, queued, logged or passed to clients. It also allows clients to prepare special contexts in which to invoke the request. Request-objects are a special case of the command pattern in which all the information necessary to fulfil some request (for example which database to use) is encapsulated within the object.`
-	,"designpatternsimage\command_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\command_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Interpreter pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Interpreter_pattern">Interpreter pattern</a> lets executable objects be composed according to a set of composition rules. Interpreters allow complex behaviour to be constructed from simple work elements and this construction to be defined in configuration, chosen by a user, or deferred until runtime.`
-	,"designpatternsimage\interpreter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\interpreter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Iterator pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Interpreter_pattern">Iterator pattern</a> provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.`
-	,"designpatternsimage\iterator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\iterator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Layered system pattern.",
@@ -1707,96 +1615,82 @@ The abstraction is not directly linked to some implementation class (as in an in
 Eventually the request reaches the 'core of the onion' and gets turned into a response. The response then propagates back out through the various objects (or layers), as it does so it may get combined with other information or change its type.
 
 The alternative to using a layered system pattern is to explicitly define how multiple objects are coupled together and interact within some high-level orchestrator class. An orchestrator represents a more procedural programming style but may be more expressive and offer increased flexibility, whereas the layered system approach might be considered more object orientated and loosely coupled.`
-	,"designpatternsimage\layer_uml.JPG", ESCAPE_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\layer_uml.JPG", ESCAPE_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Mediator pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Mediator_pattern">Mediator pattern</a> defines an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it allows their interaction to vary independently. 
 
 An example of a mediator is a message queue coupled to a message handler; multiple components (which may be constantly changing or large in number) can then interact with the queue rather than with each other directly. Another mediator example is high-level orchestrator classes responsible for using multiple smaller worker objects or classes to achieve a processing activity.`
-	,"designpatternsimage\mediator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\mediator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Memento pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Memento_pattern">Memento pattern</a> Without violating encapsulation, captures and externalizes an object&apos;s internal state allowing the object to be restored to this state later. Memento is frequently used to implementing undo functionality.`
-	,"designpatternsimage\memento_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\memento_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Null object pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Null_object_pattern">Null object pattern</a> - rather than returning a null reference or throwing an exception if a record is not found, an object is returned to the caller that it is able to process which represents a null. 
 
 For example if the caller expects a list, then return an empty list so the caller is able to process the response, but effectively does nothing. Alternatively if the caller expects an object with a given interface, create and return a class that represents a null implementation of that interface that when processed does nothing.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Behavioural patterns", "Observer pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Observer_pattern">Observer pattern</a> defines a one-to-many dependency between objects where a state change in the observed object results in all its dependants being notified and updated automatically.`
-	,"designpatternsimage\observer_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\observer_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Process manager pattern.",
 `<a target="_blank" href="https://stackoverflow.com/questions/15528015/what-is-the-difference-between-a-saga-a-process-manager-and-a-document-based-ap">Process manager pattern</a> means there is a class responsible for routing a message through multiple processing steps when the required steps may not be known at design time and may not be sequential.
 
 It is a durable event scheduler that encapsulates process specific logic and maintain a central point of control deciding what to execute next once a process is completed. Process managers maintain state so say a payment was taken from a customer the fact an order must now be sent to them is held by the process manager.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Behavioural patterns", "Responsible owner pattern",
 `Frees a client from the duty of obtaining and releasing resources.
 
 The responsible owner component obtains the resources from a factory when it is constructed. It then passes the resource into a callback or method that the client supplies. Then when this method returns or when responsible owner is disposed, it calls the dispose method on the resource it obtained (provided this provides a IDisposable interface).`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Behavioural patterns", "Saga manager pattern.",
 `<a target="_blank" href="https://stackoverflow.com/questions/15528015/what-is-the-difference-between-a-saga-a-process-manager-and-a-document-based-ap">Saga manager pattern</a> encapsulates process logic deciding what to execute next once a process is completed. A saga holds no state and makes its decisions based only on the content of the incoming message or event. So if a message to take a customer payment is processed that creates a new message containing what needs to be sent to whom, and how to refund the payment should that order not go through.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Behavioural patterns", "Special case pattern.",
 `Rather than throwing an exception, a special case object gets returned which that contains methods or a command required to handle the exceptional behaviour. This pattern is ideal for cases where there are multiple special cases where each one requires slightly different handling.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Behavioural patterns", "Specification pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Specification_pattern">Specification pattern</a> allows business rules to be combined using boolean logic. It is sometimes used as a way of combining several predicates together when filtering records.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
 ["Behavioural patterns", "State pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/State_pattern">State pattern</a> Distributes and encapsulates state specific logic across multiple classes that represent an objects state.`
-	,"designpatternsimage\state_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\state_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Strategy pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy pattern</a> lets the algorithm vary independently from clients that use it. Define a family of algorithms, then encapsulate each one and make them interchangeable.`
-	,"designpatternsimage\strategy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\strategy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Template method pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Template_method_pattern">Template method pattern</a> defines the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm&apos;s structure.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Visitor pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Visitor_pattern">Visitor pattern</a> allows adding new virtual functions to a family of classes, without modifying the classes.
 
 The classes that require modification must all implement the &apos;accept&apos; method. Clients call this accept  method to perform some new action on that family of classes thereby extending their functionality. Clients are able to use this one accept method to perform a wide range of new actions by passing in a different visitor class for each specific action. A visitor class contains multiple  overridden visit methods defining how to achieve that same specific action for every class within the family. These visit methods get passed an instance on which to work.`
-	,"designpatternsimage\visitor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
-],
+	,"designpatternsimage\visitor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ] /* END OF CONTENT ARRAY */
