@@ -526,7 +526,7 @@ Example of concepts are (1) The inputs were used properly (2) The objects state 
 	
 	
 ["Anti-patterns", "Avoid constrained construction.",
-`Constrained construction is where classes that implement an interface must have default constructors, a specific constructor, or use a configuration file within their constructors. It permits instances to be created on demand by specifying the type <a href="http://blog.ploeh.dk/2011/04/27/Providerisnotapattern/">(the provider pattern)</a>, but also ties implementations of that interface to have that specific construction (and possibly dependencies). It also ties clients of the interface to construct all concrete implementations in a given way.`
+`Constrained construction is where classes that implement an interface must have default constructors, a specific constructor, or use a configuration file within their constructors. It permits instances to be created on demand by specifying the type <a target="_blank" href="http://blog.ploeh.dk/2011/04/27/Providerisnotapattern/">(the provider pattern)</a>, but also ties implementations of that interface to have that specific construction (and possibly dependencies). It also ties clients of the interface to construct all concrete implementations in a given way.`
 	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],	
 	
 	
@@ -803,7 +803,7 @@ Balance this with the desire to avoid encoding redundant or unnecessary informat
 	
 	
 ["Clean-code tips", "Seek out and use language idioms that are well known.",
-`Each language has a most efficient and best way to achieve something, which is usually the way most commonly used. Research if there is an appropriate idiom <a href="https://www.programming-idioms.org">www.programming-idioms.org</a> or cookbook recipe for what you need before you cooking up your own method for it.
+`Each language has a most efficient and best way to achieve something, which is usually the way most commonly used. Research if there is an appropriate idiom <a target="_blank" href="https://www.programming-idioms.org">www.programming-idioms.org</a> or cookbook recipe for what you need before you cooking up your own method for it.
 
 Balance this with the desire to avoid esoteric features of a language that are not widely understood.`
 	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],	
@@ -897,7 +897,7 @@ Non-static methods can be extended using polymorphism, whereas static methods ca
 `Honour your fellow developers.
 When using another's code do not forget to pay them credit when discussing the code or in your commit message. If another developer produced an elegant solution do not immediately go and kludge it with a horrible extension, copy it, give reference to it then kludge the copy respecting both their code and the single-responsibility-principle as much as possible.
 
-I would also like to honour Robert C Martin whose excellent book (Clean Code) was inspiration for this work as well as the Zen of Python by Tim Peters.  <a href="http://wiki.c2.com/?PatternIndex">The pattern index</a> and <a href="https://en.wikipedia.org/wiki/Software_design_pattern">Wikipedia</a> and the GameDeveloper magazine.`
+I would also like to honour Robert C Martin whose excellent book (Clean Code) was inspiration for this work as well as the Zen of Python by Tim Peters.  <a target="_blank" href="http://wiki.c2.com/?PatternIndex">The pattern index</a> and <a target="_blank" href="https://en.wikipedia.org/wiki/Software_design_pattern">Wikipedia</a> and the GameDeveloper magazine.`
 	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 	
@@ -1014,10 +1014,145 @@ Throttling or dynamically configuring live services may also be worth considerin
 /* CONCURRENCY */
 /* ============================================== */
 	
-["Concurrency", "",
-``
+["Concurrency", "Concurrency is a single responsibility.",
+`Dealing with concurrency is difficult to grasp and complex so separate it from other code, making it easier to debug. Test it by trying to force failures by adding hooks that permit testing, instrumentation or injection of jiggling delays. Also adjust any tuning you may have (such as time-outs) in order to discover how tuning effects stability.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 	
+["Concurrency", "Decouple your what from your when.",
+`Code that deals with threads, tasks, locking and blocking are primarily concerned with WHEN something happens. WHAT happens is a separate concern that should be dealt with separately.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Make critical sections as small and simple as possible.",
+`Critical sections are areas of code covered by a lock so that only one thread may enter (for example synchronized blocks or methods). To maximise performance these critical sections should be as small as possible and mainly operate on shared data or state. Consider indicating to other threads what activities are occurring using flags or messaging instead.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Limit access to shared data.",
+`Minimise the amount of data and locks shared between threads. Minimise the number of times a thread needs to coordinate its activities with others.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Reveal what a lock protects and restrict its visibility.",
+`Restrict visibility of locks, it is bad practice to lock 'this' or 'string' because it will make the lock accessible to others. Document what each lock protects and minimise the code under the lock.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Work with copies of shared data.",
+`Consider working with copies of shared data (or immutable collections) then merge your changes back into the shared data in a thread-safe way afterwards (for example by using a critical section or single thread). This technique allows you to minimise critical sections and reduces the risk of concurrency bugs.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "First make your service work properly - then make it work concurrently.",
+`Ensure your business logic fully works before attempting to add concurrency. Time can be lost hunting a 'concurrency bug' that turns out to be a simple business logic bug. If your service misbehaves separate debugging your concurrency logic from debugging your business logic. `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Know your concurrency toolbox.",
+`Know what concurrency classes and patterns are available, such as... Dining-philosophers problem, reader writer problem, client-based locking, server-based locking, adapted server (locking by an independent service), pessimistic locking, optimistic locking, atomic integer, executors, renterant lock, semaphore, countdown latch, concurrent dictionary, producer-consumer (queues), immutable collection classes (set, list, dictionary,stack, queue), blocking collection classes, async collection classes, asyncproducerconsumerqueue and buffer block.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Know your execution model.",
+`Understand the details of how your application executes such as bound resources (e.g. database connections), mutual exclusions, thread starvations, deadlock, live-lock (resonance while retrying), retry strategies and timeout strategies.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Beware of changes occurring between synchronized method calls.",
+`A caller may call one synchronized method (critical section) then call another expecting nothing to have changed. However another thread in the meantime has the opportunity to interfere.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Avoid async void (C#).",
+`Avoid creating async void methods in C#. Exceptions are thrown within async void methods the exception are silently lost. Instead return a (Task) object which allows the exception to propagate back to the caller.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Know the five demons necessary for summoning sudden deadlock.",
+`(1) Multiple threads or coupled processes.
+(2) No pre-emption – A thread cannot ask another to release resources.
+(3) Mutual exclusion – A Resource that is limited or cannot be used by multiple threads.
+(4) Lock&Wait – A thread will not release a resource until it has all it needs and has completed.
+(5) Circular wait – Thread#1 has a resource thread#2 needs, thread#2 has a resource thread#1 needs.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Those who use threads with sequential instructions have many paths to follow.",
+`Given (N) sequential instructions in each thread and (T) threads, the number of potential code-paths (P) is likely to be astronomical. P = (TN)!/((N!) to the power of T). Using the minimum number of threads, trying to make sequential instructions unrelated to other threads and considered use locks and critical sections lowers the number of potential code-paths and makes code more reliable.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Avoid mutual exclusion.",
+`Use or develop (thread-safe) resources that permit simultaneous use. Ensure you have more resources than threads. Check all the resources your thread needs to do its work are available before allowing it to acquire any of them.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Avoid lock-and-wait.",
+`Check all resources your thread needs are available. Alternatively release all resources and retry if one is blocked.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Break pre-emption.",
+`Allow one thread to request resources from another if that thread is also blocked. Doing this will reduce the number of threads that have to an abandon-and-retry.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Seek one omnipotent order of acquisition if you wish to avoid deadlock.",
+`Avoid circular wait by always locking resources in a given order rather than their order of use. If possible encapsulate the order into a class with that single responsibility. If the required resources are selected by ID, lock these in a consistent manner by ordering them by ID first (or possibly by sort by name).`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "When using asynchronous code use async all the way.",
+`When using async avoid having multiple wait (or wait for a result) points in your code, ideally these should only occur at a few places at the very top-level of your call stack. This avoids deadlocking when you have limited threads or only one UI thread  .This can happen easily as the code below demonstrates. 
+
+// (2) After executing the delay the line below waits for the context (thread) to become available, 
+//      but that thread will never become available, because it is held by (1).
+async task WaitAsync(){await Task.Delay(one_second)};
+
+Task myjob = WaitAsync();
+// (1) The line below synchronously waits for the job to complete, 
+//       but in doing so captures the the single UI thread (It should really have been.. await myjob)
+myjob.wait();`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "If your not care about getting any result back then tell your task that.",
+`When using async if you are awaiting a fire-or-forget task (such as a UI or background task) where you do not require it to return to the current context with a result (or exception) many languages permit you to inform the task, improving performance and reducing deadlocking. In C# this can be done  using (.ConfigureAwait(false))`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Async tasks should be normal in size.",
+`If the task is very short running then a lot of processor time is lost to task scheduling. However if the task is very long running then the thread-pool cannot dynamically adjust well.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Seek simple concurrency and consider alternatives to concurrency.",
+`Complexity increases very rapidly with the number of inter-related threads or processes involved in achieving some work. Always aim to minimise your inter-related threads or processes. Consider using sharding or <a target="_blank" href="https://en.wikipedia.org/wiki/Reactor_pattern">the reactor pattern</a> to avoid concurrency in your processing logic.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+	
+["Concurrency", "Be aware of the concurrency patterns available.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Concurrency_pattern">Concurrency patterns</a>
+
+<a target="_blank" href="https://en.wikipedia.org/wiki/Reactor_pattern">The reactor pattern</a>
+<a target="_blank" href="https://www.dre.vanderbilt.edu/~schmidt/PDF/HS-HA.pdf">Half-Sync/Half-Async</a>
+<a target="_blank" href="https://en.wikipedia.org/wiki/Leaders/followers_pattern">Leader-followers</a>
+<a target="_blank" href="https://en.wikipedia.org/wiki/Actor_model">Actor model</a>
+<a target="_blank" href="https://en.wikipedia.org/wiki/Active_object">Active object</a>
+<a target="_blank" href="https://en.wikipedia.org/wiki/Monitor_(synchronization)">Monitor objects (locks and semaphores)</a>
+`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+/* ============================================== */	
+/* SECURITY */
+/* ============================================== */
+	
+	
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
 
 ]
