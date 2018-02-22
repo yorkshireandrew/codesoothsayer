@@ -453,6 +453,11 @@ Trying to mix java, javascript and html together in a file or in your head will 
 
 Without this the code from different developers may differ in subtle and hard to detect ways.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+	
+
+["Software design", "Identify the key classes required to simplify and reduce the code early.",
+`Pause to find the key abstractions and classes a project requires (such as helper classes to parse input or produce output, specialised queueing classes, entities, control interfaces) early will save time by reducing the amount of code a project requires.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 /* ============================================== */	
 /* TEST DRIVEN DEVELOPMENT */
@@ -1007,8 +1012,8 @@ Throttling or dynamically configuring live services may also be worth considerin
 	
 ["The coding process", "Remember to commit little and often.",
 `A series of small commits that have well considered commit messages is far easier to follow than one huge commit which alters dozens of files and has a more general commit message. Small commits makes loosing work less likely and gives colleagues visibility of your progress. `
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+	
 	
 /* ============================================== */	
 /* CONCURRENCY */
@@ -1149,10 +1154,251 @@ myjob.wait();`
 /* ============================================== */
 	
 	
+["Security", "HTML Injection – URLs.",
+`Ensure the URLs in pages cannot be manipulated by a well crafted query. If you create a URL in a page (e.g. HTML forms that get post-ed back to the current pages URL in order to get processed) ensure user input cannot be used to manipulate that URL. For example in PHP do not use $_SERVER['PHP_SELF'] directly, you must sanitize it by stripping out % characters and pass it through htmlentities() as well as do a final check that it is still going to your site!`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "HTML Injection – Javascript.",
+`Ensure user input (for example input query parameters) cannot be used to inject javascript into your response page. Otherwise an evil user can craft a URL for your site then send that evil url to someone they want to attack (say by email). When the victim then uses that URL to visit your site, your site will run that evil javascript on their machine.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "SQL Injection.",
+`Applications should use stored procedures to create, update, read and delete material on a database, so user content cannot be crafted to run arbitrary SQL. If user content is used to create SQL queries it should be escaped so it contains no special SQL characters (such as ') or html characters such as (< or >)`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Avoid using standard ports.",
+`Make it harder for evil hackers by using non standard ports, For example do not use port 22 for SSH. Also consider using tools such as netfilter to rate-limit incoming connections.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Limit access to SSH, VNC,RDP and database ports.",
+`Use firewalls to ensure access to the ports of vital services is only permitted from your businesses address ranges. Consider blocking all inbound traffic from the IP ranges of countries known for launching cyberattacks.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Use public key based logins to access servers rather than passwords.",
+`For example use public-private key pairs generated with ssh-keygen.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Disable root user login (Debian/Ubuntu).",
+`Linux:
+Beforehand ensure ops users are able to login in as root by adding them to the sudo group (sudo adduser someone sudo) then alter sshd_config to...
+
+PermitRootLogin no
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+UsePAM no 
+IgnoreRhosts yes `
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Limit users ssh access.",
+`Linux:
+alter sshd_config to include
+AllowUsers someone1 someone2`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Check what services you have installed and remove ones that are not needed.",
+
+`Check what ports you have open and why. Consider stopping those services so they do not add to your attack footprint.
+Linux:
+
+/sbin/chkconfig --list |grep '3:on'
+chkconfig serviceName off
+
+netstat -tulpn
+ss -tulpn
+
+Windows:
+
+netstat
+-a Displays all connections and listening ports
+-b Displays the executable involved in creating each connection or listening port.
+-n Displays addresses and port numbers in numerical form.
+-o Displays the owning process ID associated with each connection.
+`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Check what packages you have installed and remove ones you do not need.",
+`Linux:
+sudo apt-get remove package-name`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Check accounts for empty passwords.",
+`Linux:
+cat /etc/shadow | awk -F: '($2==""){print $1}'`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "One service - once system.",
+`Use virtualisation so each service runs in its own VM or container. So if a service is successfully exploited there is a limit to the services that are affected.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Keep your operating system and applications up-to-date.",
+`Linux:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade 
+`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Set up file and folder permissions to prevent unauthorised access.",
+`Also consider setting up separate disc or file partitions for different services.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "Ensure web server services run under a user account that has limited access privileges.",
+`So that if someone does manage to be able to run some malicious code via your web server it has to run under an account that has limited privileges on services such as databases, limiting the damage.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+/* ============================================== */	
+/* GAME DEVELOPMENT */
+/* ============================================== */
+
+
+["Game development", "Do not be unrealistic.",
+`Creating assets and coding features always takes more time than you think. Avoid wasting time designing and working on assets and features you do not realistically have the time to complete properly.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
 ["Security", "",
 ``
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 ],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
+["Security", "",
+``
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+
+],
+
+
 
 ]
