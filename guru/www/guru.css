@@ -2,6 +2,23 @@ body{
 	background-color: #87c0f2;
 }
 
+.centred_image
+{
+   	text-align:	center;
+    margin-top:	0px;
+    margin-bottom:	0px;
+    padding:	0px;
+}
+    		
+#image{
+	margin-top: 5px;
+	padding: 5px;
+	background-color: white;
+	border: solid black;
+    border-width: 2px;
+	border-radius: 10px;	
+}
+
 #titlebar_outer{
 	border: solid 2px black;
 	border-radius: 5px;
