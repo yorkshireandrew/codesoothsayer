@@ -77,7 +77,7 @@ Cleanly separate your happy-path from your error-path... these are two different
 
 	
 ["Liskov Substitution Principle (LSP)", "Generic inputs to subtype methods must be contravariant.",
-`If a parent class (AnimalShelter) has a method that accepts List<Animal> as an input parameter, subtypes can have methods with wider inputs such as List<Object> … so that method could easily digest List<Animal> … but cannot have narrower more restrictive inputs such as List<Mouse> since our subclass can never be totally sure it will always get given a load of mice.`
+`If a parent class (AnimalShelter) has a method that accepts List<Animal> as an input parameter, subtypes can have methods with wider inputs such as List<Object> ... so that method could easily digest List<Animal> ... but cannot have narrower more restrictive inputs such as List<Mouse> since our subclass can never be totally sure it will always get given a load of mice.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 	
@@ -135,7 +135,7 @@ This does not mean that multiple implementation classes are required, a single i
 
 	
 ["Dependency injection (DI)", "Consider each objects intended life-cycle.",
-`Is the life-cycle (1) Singleton (2) Transient (3) Per Graph (one instance per object graph – running with the same thread) (4) Web request scoped (5) Pooled (6) Lazy or (7) Future (proxy until the dependency becomes available). Ideally an inversion of control container should be responsible for managing the life-cycle of most objects.`
+`Is the life-cycle (1) Singleton (2) Transient (3) Per Graph (one instance per object graph - running with the same thread) (4) Web request scoped (5) Pooled (6) Lazy or (7) Future (proxy until the dependency becomes available). Ideally an inversion of control container should be responsible for managing the life-cycle of most objects.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 	
@@ -194,7 +194,7 @@ Regardless of whether the management of services is automated or not, the config
 
 	
 ["Software design", "Do not summon an entourage.",
-`In the same way rulers rarely live among there workers – an interface should rarely live in the same assembly as a group of associated concrete implementations. This allows clients to only reference what they need (the interface and a chosen implementation) without being forced to hold references to an entourage of implementations and all their hangers-on. Follow the stairway pattern.`
+`In the same way rulers rarely live among there workers - an interface should rarely live in the same assembly as a group of associated concrete implementations. This allows clients to only reference what they need (the interface and a chosen implementation) without being forced to hold references to an entourage of implementations and all their hangers-on. Follow the stairway pattern.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 	
@@ -304,7 +304,7 @@ Balance this with the desire to keep commits associated with stories and code-cl
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 	
-["Software design", "Dodge the things that others throw – provided someone else is there to catch them.",
+["Software design", "Dodge the things that others throw - provided someone else is there to catch them.",
 `Exceptions thrown by framework classes (or framework classes you inherit from) are often intended to be caught by that same framework somewhere higher up the stack, your business logic need not interfere.
 
 Where you know this is not the case then rethrow the framework exception as your own domain specific exception then handle it appropriately.`
@@ -375,7 +375,7 @@ In contrast it is permissible to pick a specific properties or elements from a c
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 	
 
-["Software design", "Apply Command – Query-Response Segregation (CQRS).",
+["Software design", "Apply Command - Query-Response Segregation (CQRS).",
 `Calls to a service or method should be either (1) A command that causes an action or state change. (2) A query that obtains information. Methods or service calls that are doing both indicate that it has multiple responsibilities (being a query with side-effects) and will be much clearer if re-factored. 
 
 Consider breaking classes, interfaces and services down into two separate ones that deal with just commands or just queries.`
@@ -478,7 +478,7 @@ Without this the code from different developers may differ in subtle and hard to
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 	
-["Test driven development (TDD)", "Every good plan should fail first – then succeed – then fail again.",
+["Test driven development (TDD)", "Every good plan should fail first - then succeed - then fail again.",
 `(1) Do not write production code until you have a failing test for it.
 (2) Do not write more test than is sufficient to fail (i.e. Once you have got it failing stop writing the test)
 (3) Do not write more production code than is sufficient to get the test to pass.
@@ -660,19 +660,19 @@ Avoid nesting code-blocks within a single method more than three deep, in order 
 	
 	
 ["Code-smells", "Watch out for multiple similar switch statements.",
-`If you have multiple similar switch statements (or similar if – else if clusters) it is a sign you should really be using a factory or abstract factory (containing a single switch statement) to return a polymorphic type that implements all the required behaviour. Alternatively you should be using the 'state' design pattern to implement the behaviour of multiple states more cleanly.`
+`If you have multiple similar switch statements (or similar if - else if clusters) it is a sign you should really be using a factory or abstract factory (containing a single switch statement) to return a polymorphic type that implements all the required behaviour. Alternatively you should be using the 'state' design pattern to implement the behaviour of multiple states more cleanly.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],	
 	
 	
 	
 ["Code-smells", "Avoid functions or methods with side-effects - they are lies.",
-`If a method has side-effects (performs a state change  unrelated to its main functionality) then both its name and its design promise to do one thing – but it lies, it does other stuff as well.`
+`If a method has side-effects (performs a state change  unrelated to its main functionality) then both its name and its design promise to do one thing - but it lies, it does other stuff as well.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],	
 	
 	
 	
 ["Code-smells", "Watch for methods such as 'calculate..', '..manager','..controller', 'calculate..', 'display..'.",
-`These kind of names indicate the class or method might contain large chunks of functional programming – Is it a stove-pipe solution that limits adaptiveness? Can the responsibility for doing some of the work can be pushed out into domain classes or other supporting classes?`
+`These kind of names indicate the class or method might contain large chunks of functional programming - Is it a stove-pipe solution that limits adaptiveness? Can the responsibility for doing some of the work can be pushed out into domain classes or other supporting classes?`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],	
 	
 	
@@ -848,7 +848,7 @@ Tells readers of the call precisely what state on the object is being changed, a
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],	
 	
 	
-["Clean-code tips", "Values in the code-base should use troll counting – be either zero, one or many.",
+["Clean-code tips", "Values in the code-base should use troll counting - be either zero, one or many.",
 `Avoid using special numbers in the code-base. It is likely to be suitably obvious why a zero and one gets used - but any specific 'many' value should to be represented as a well named constant, a configuration value or be a data-driven value (pulled from a database or similar).`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],	
 	
@@ -932,7 +932,7 @@ I would also like to honour Robert C Martin whose excellent book (Clean Code) wa
 
 	
 ["The coding process", "If you want to ensure your code is flexible, then flex it.",
-`You should never be afraid to make changes to code or refactor it periodically – If you are afraid it is a sign the tests are lacking, or the structure has become excessively complex. Alternatively it is a sign the code is not sufficiently expressive about how it operates or is not sufficiently documented.`
+`You should never be afraid to make changes to code or refactor it periodically - If you are afraid it is a sign the tests are lacking, or the structure has become excessively complex. Alternatively it is a sign the code is not sufficiently expressive about how it operates or is not sufficiently documented.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 	
@@ -952,7 +952,7 @@ I would also like to honour Robert C Martin whose excellent book (Clean Code) wa
 
 	
 ["The coding process", "Commit to what you say.",
-`If you say it then you should commit to it, mean it and do it, as doing otherwise is unprofessional unclear. The following phrases are the sound of an un-commitment being made to something... 'I hope...',' I should...', 'I wish...', 'I'll try', ' Lets all …' and 'We should...'`
+`If you say it then you should commit to it, mean it and do it, as doing otherwise is unprofessional unclear. The following phrases are the sound of an un-commitment being made to something... 'I hope...',' I should...', 'I wish...', 'I'll try', ' Lets all ...' and 'We should...'`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 	
@@ -1076,10 +1076,10 @@ Throttling or dynamically configuring live services may also be worth considerin
 	
 ["Concurrency", "Know the five demons necessary for summoning sudden deadlock.",
 `(1) Multiple threads or coupled processes.
-(2) No pre-emption – A thread cannot ask another to release resources.
-(3) Mutual exclusion – A Resource that is limited or cannot be used by multiple threads.
-(4) Lock&Wait – A thread will not release a resource until it has all it needs and has completed.
-(5) Circular wait – Thread#1 has a resource thread#2 needs, thread#2 has a resource thread#1 needs.`
+(2) No pre-emption, A thread cannot ask another to release resources.
+(3) Mutual exclusion, A Resource that is limited or cannot be used by multiple threads.
+(4) Lock&Wait, A thread will not release a resource until it has all it needs and has completed.
+(5) Circular wait, Thread#1 has a resource thread#2 needs, thread#2 has a resource thread#1 needs.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 	
@@ -1158,13 +1158,13 @@ myjob.wait();`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 	
-["Security", "HTML Injection – URLs.",
+["Security", "HTML Injection - URLs.",
 `Ensure the URLs in pages cannot be manipulated by a well crafted query. If you create a URL in a page (e.g. HTML forms that get post-ed back to the current pages URL in order to get processed) ensure user input cannot be used to manipulate that URL. For example in PHP do not use $_SERVER['PHP_SELF'] directly, you must sanitize it by stripping out % characters and pass it through htmlentities() as well as do a final check that it is still going to your site!`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 
 
-["Security", "HTML Injection – Javascript.",
+["Security", "HTML Injection - Javascript.",
 `Ensure user input (for example input query parameters) cannot be used to inject javascript into your response page. Otherwise an evil user can craft a URL for your site then send that evil url to someone they want to attack (say by email). When the victim then uses that URL to visit your site, your site will run that evil javascript on their machine.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
@@ -1287,7 +1287,7 @@ sudo apt-get dist-upgrade
 
 
 ["Game development", "Care what your users think.",
-`Provide monitoring and metrics so you can observe user behaviour and provide channels so users can feedback to you and allow you to improve the product. Creating a product is the act of preparing to make money – Maintaining the product and providing a service is the act of actually making money.`
+`Provide monitoring and metrics so you can observe user behaviour and provide channels so users can feedback to you and allow you to improve the product. Creating a product is the act of preparing to make money - Maintaining the product and providing a service is the act of actually making money.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
 
 
@@ -1364,7 +1364,7 @@ sudo apt-get dist-upgrade
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
-["Philosophy", "Working code is not sufficient – it must also be expressive.",
+["Philosophy", "Working code is not sufficient - it must also be expressive.",
 `Commercial maintained code will be read at least ten times more often than it is written. Working code is not sufficient, it must also be expressive, easy to read and easily testable.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
@@ -1479,7 +1479,7 @@ sudo apt-get dist-upgrade
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
-["Philosophy", "If you cannot explain it to a customer – then it is a bad idea.",
+["Philosophy", "If you cannot explain it to a customer - then it is a bad idea.",
 ` `
 	,"", ESCAPE_HTML, HIDE_CONTENT, HIDE_IMAGE],
 
@@ -1500,17 +1500,17 @@ sudo apt-get dist-upgrade
 
 ["Creational patterns", "Abstract factory pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">Abstract factory pattern</a> provides an interface for creating families of related or dependent objects without specifying their concrete classes. For example an abstract factory could be used to generate the components of a user interface. If you could then choose to use a &apos;windows&apos; or &apos;mac&apos; abstract factory to get a web interface with a given style.`
-	,"designpatternsimage\abstract_factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/abstract_factory_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Creational patterns", "Builder pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Builder_pattern">Builder pattern</a> separates the construction of a complex object from the object being created, allowing the same construction process to create various representations or objects. Builders may hold state allowing creation to be done incrementally and the choosing of some elements of the complex object to be deferred until the appropriate time. The builder pattern also allows different build strategies to be swapped in or out.`
-	,"designpatternsimage\builder_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],	
+	,`designpatternsimage/builder_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],	
 
 
 ["Creational patterns", "Factory method pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Factory_method_pattern">Factory method pattern</a> Defines the interface for creating an object (which provides some service usually via an interface) while the factory retains control over selecting which class gets instantiated. Factories are often used alongside dependency injection so that clients are able to construct objects when required, but the dependency injection framework still controls what is instantiated. `
-	,"designpatternsimage\factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],	
+	,`designpatternsimage/factory_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],	
 
 
 ["Creational patterns", "Lazy initialization pattern.",
@@ -1525,12 +1525,12 @@ sudo apt-get dist-upgrade
 
 ["Creational patterns", "Prototype pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Prototype_pattern">Prototype pattern</a> provides a new object by copying an existing example. This allows specifying which object to create to be deferred to runtime and may provide a performance increase in situations where cloning is simple but construction is complex.`
-	,"designpatternsimage\prototype_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/prototype_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Creational patterns", "Singleton pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Singleton_pattern">Singleton pattern</a> Ensures a class has only one instance, and provide a global point of access to it. See also the similar <a target="_blank" href="https://en.wikipedia.org/wiki/Multiton_pattern">Multiton pattern</a>`
-	,"designpatternsimage\singleton_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/singleton_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Creational patterns", "Revealing module pattern.",
@@ -1545,39 +1545,39 @@ sudo apt-get dist-upgrade
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Adapter_pattern">Adapter pattern</a> provides the interface a client expects, using the services of a class with a different interface.
 
 Class adapters extend the existing class, whereas object adapters wrap an instance of the existing class. Class adapters have access to protected variables that object adapters does not, which may make them less brittle. Wherever possible adapters should take advantage of stable interfaces of the existing class so they are less brittle to changes of the existing class.`
-	,"designpatternsimage\adapter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/adapter_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Bridge pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Bridge_pattern">Bridge pattern.</a> decouples an abstraction from its implementation allowing both to vary independently. 
 
 The abstraction is not directly linked to some implementation class (as in an interface); Instead a concrete abstraction class exists which drives a concrete implementation class via the interface the concrete implementation class wishes to expose.`
-	,"designpatternsimage\bridge_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/bridge_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Composite pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Composite_pattern">Composite pattern</a> allows clients to treat individual objects and compositions of objects uniformly. Both compositions of objects and leaf objects should provide the same interface for clients to work with.`
-	,"designpatternsimage\composite_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/composite_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Decorator pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Decorator_pattern">Decorator pattern</a> allows an objects responsibilities to be cleanly separated and its behaviour to be dynamically extended or composed by keeping the same interface. Decorators may either use mix-ins and composition or be a sub-class that is used to extend a simpler class at compile time.`
-	,"designpatternsimage\decorator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/decorator_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Facade pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Facade_pattern">Facade pattern</a> provides interfaces to make a complex subsystem easier to use. A facade usually reduces the number of additional dependencies a client needs in order to use the complex subsystem.`
-	,"designpatternsimage\facade_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/facade_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Flyweight pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Flyweight_pattern">Flyweight pattern</a> uses sharing so large numbers of objects can possess the same data or feature efficiently.  A flyweight serves as a normalization of how data is held in memory. In most cases the components that are shared across the large number of objects are immutable.`
-	,"designpatternsimage\flyweight_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/flyweight_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Structural patterns", "Proxy pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Proxy_pattern">Proxy pattern</a> provide a surrogate or placeholder for another object to control access to it. For example a class that displays a temporary loading image until image data has been downloaded.`
-	,"designpatternsimage\proxy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/proxy_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 /* ============================================== */	
@@ -1586,27 +1586,27 @@ The abstraction is not directly linked to some implementation class (as in an in
 
 ["Behavioural patterns", "Blackboard pattern",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Blackboard_(design_pattern)">Blackboard pattern</a>/<a target="_blank" href="https://en.wikipedia.org/wiki/Blackboard_system">Blackboard system</a> separates the responsibility of combining of information from multiple heterogeneous knowledge sources from the knowledge sources themselves, allowing the knowledge sources to be dynamically combined and configured to solve a problems. Its most likely use is within AI systems.`
-	,"designpatternsimage\blackboard_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/blackboard_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Chain of responsibility pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern">Chain of responsibility pattern</a> avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. The request is passed along a chain until an object handles it. A common example is user-interfaces where events such as a mouse-click get handled by the clicked item, or if that item has no mouse-click handler it forwards the event on to its parent.`
-	,"designpatternsimage\cor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/cor_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Command pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Command_pattern">Command pattern</a> encapsulates a work element or a request as an object, thereby allowing it to be saved, queued, logged or passed to clients. It also allows clients to prepare special contexts in which to invoke the request. Request-objects are a special case of the command pattern in which all the information necessary to fulfil some request (for example which database to use) is encapsulated within the object.`
-	,"designpatternsimage\command_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/command_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Interpreter pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Interpreter_pattern">Interpreter pattern</a> lets executable objects be composed according to a set of composition rules. Interpreters allow complex behaviour to be constructed from simple work elements and this construction to be defined in configuration, chosen by a user, or deferred until runtime.`
-	,"designpatternsimage\interpreter_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/interpreter_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Iterator pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Interpreter_pattern">Iterator pattern</a> provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.`
-	,"designpatternsimage\iterator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/iterator_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Layered system pattern.",
@@ -1615,19 +1615,19 @@ The abstraction is not directly linked to some implementation class (as in an in
 Eventually the request reaches the 'core of the onion' and gets turned into a response. The response then propagates back out through the various objects (or layers), as it does so it may get combined with other information or change its type.
 
 The alternative to using a layered system pattern is to explicitly define how multiple objects are coupled together and interact within some high-level orchestrator class. An orchestrator represents a more procedural programming style but may be more expressive and offer increased flexibility, whereas the layered system approach might be considered more object orientated and loosely coupled.`
-	,"designpatternsimage\layer_uml.JPG", ESCAPE_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/layer_uml.JPG`, ESCAPE_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Mediator pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Mediator_pattern">Mediator pattern</a> defines an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it allows their interaction to vary independently. 
 
 An example of a mediator is a message queue coupled to a message handler; multiple components (which may be constantly changing or large in number) can then interact with the queue rather than with each other directly. Another mediator example is high-level orchestrator classes responsible for using multiple smaller worker objects or classes to achieve a processing activity.`
-	,"designpatternsimage\mediator_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/mediator_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Memento pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Memento_pattern">Memento pattern</a> Without violating encapsulation, captures and externalizes an object&apos;s internal state allowing the object to be restored to this state later. Memento is frequently used to implementing undo functionality.`
-	,"designpatternsimage\memento_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/memento_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Null object pattern.",
@@ -1639,7 +1639,7 @@ For example if the caller expects a list, then return an empty list so the calle
 
 ["Behavioural patterns", "Observer pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Observer_pattern">Observer pattern</a> defines a one-to-many dependency between objects where a state change in the observed object results in all its dependants being notified and updated automatically.`
-	,"designpatternsimage\observer_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/observer_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Process manager pattern.",
@@ -1673,12 +1673,12 @@ The responsible owner component obtains the resources from a factory when it is 
 
 ["Behavioural patterns", "State pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/State_pattern">State pattern</a> Distributes and encapsulates state specific logic across multiple classes that represent an objects state.`
-	,"designpatternsimage\state_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/state_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Strategy pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy pattern</a> lets the algorithm vary independently from clients that use it. Define a family of algorithms, then encapsulate each one and make them interchangeable.`
-	,"designpatternsimage\strategy_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/strategy_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Template method pattern.",
@@ -1690,7 +1690,7 @@ The responsible owner component obtains the resources from a factory when it is 
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Visitor_pattern">Visitor pattern</a> allows adding new virtual functions to a family of classes, without modifying the classes.
 
 The classes that require modification must all implement the &apos;accept&apos; method. Clients call this accept  method to perform some new action on that family of classes thereby extending their functionality. Clients are able to use this one accept method to perform a wide range of new actions by passing in a different visitor class for each specific action. A visitor class contains multiple  overridden visit methods defining how to achieve that same specific action for every class within the family. These visit methods get passed an instance on which to work.`
-	,"designpatternsimage\visitor_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/visitor_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ] /* END OF CONTENT ARRAY */
