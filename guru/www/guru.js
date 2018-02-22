@@ -58,8 +58,11 @@ function set_image_visiblity(value){
 }
 
 function choose_content(){
-	var index = semi_random_index_generator.next();
-	var selected_raw_content = content[index];
+	var selected_raw_content = undefined;
+	while(selected_raw_content == undefined){
+		var index = semi_random_index_generator.next();
+		selected_raw_content = content[index];
+	}
 	return new Content(selected_raw_content);
 }
 

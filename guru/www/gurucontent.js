@@ -224,7 +224,7 @@ Regardless of whether the management of services is automated or not, the config
 
 	
 ["Software design", "Consider using mix-ins and duck-typing (C#).",
-`In C# you can use duck-typing by using the “dynamic” keyword or Impromptu interface (nuget) which is a run-time adapter. Mix-ins can be implemented using C# extension methods, but these can be hard to test, Re-motion Remix is another alternative.`
+`In C# you can use duck-typing by using the 'dynamic' keyword or Impromptu interface (nuget) which is a run-time adapter. Mix-ins can be implemented using C# extension methods, but these can be hard to test, Re-motion Remix is another alternative.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 	
@@ -1152,16 +1152,11 @@ myjob.wait();`
 /* ============================================== */	
 /* SECURITY */
 /* ============================================== */
-
-["Security", "blah",
-`blah`
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
-	
+		
+		
 ["Security", "HTML Injection - URLs.",
 `Ensure the URLs in pages cannot be manipulated by a well crafted query. If you create a URL in a page (e.g. HTML forms that get post-ed back to the current pages URL in order to get processed) ensure user input cannot be used to manipulate that URL. For example in PHP do not use $_SERVER['PHP_SELF'] directly, you must sanitize it by stripping out % characters and pass it through htmlentities() as well as do a final check that it is still going to your site!`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
-
 
 
 ["Security", "HTML Injection - Javascript.",
@@ -1683,7 +1678,7 @@ The responsible owner component obtains the resources from a factory when it is 
 
 ["Behavioural patterns", "Template method pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Template_method_pattern">Template method pattern</a> defines the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template method lets subclasses redefine certain steps of an algorithm without changing the algorithm&apos;s structure.`
-	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	,`designpatternsimage/template_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
 ["Behavioural patterns", "Visitor pattern.",
