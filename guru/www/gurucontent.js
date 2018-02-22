@@ -1568,9 +1568,181 @@ sudo apt-get dist-upgrade
 /* ============================================== */
 
 
-["Creational patterns", "",
+["Creational patterns", "Abstract factory pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">Abstract factory pattern</a> provides an interface for creating families of related or dependent objects without specifying their concrete classes. For example an abstract factory could be used to generate the components of a user interface. If you could then choose to use a &apos;windows&apos; or &apos;mac&apos; abstract factory to get a web interface with a given style.`
+	,"designpatternsimage\abstract_factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Creational patterns", "Builder pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Builder_pattern">Builder pattern</a> separates the construction of a complex object from the object being created, allowing the same construction process to create various representations or objects. Builders may hold state allowing creation to be done incrementally and the choosing of some elements of the complex object to be deferred until the appropriate time. The builder pattern also allows different build strategies to be swapped in or out.`
+	,"designpatternsimage\builder_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],			
+],
+
+
+["Creational patterns", "Factory method pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Factory_method_pattern">Factory method pattern</a> Defines the interface for creating an object (which provides some service usually via an interface) while the factory retains control over selecting which class gets instantiated. Factories are often used alongside dependency injection so that clients are able to construct objects when required, but the dependency injection framework still controls what is instantiated. `
+	,"designpatternsimage\factory_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],			
+],
+
+
+["Creational patterns", "Lazy initialization pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Lazy_initialization">Lazy initialization pattern</a> delays an expensive process, such as creation of an object, until when is first needed.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Creational patterns", "Object pool pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Object_pool_pattern">Object pool pattern</a> avoids expensive acquisition and release of resources by recycling objects that are no longer in use. Object pools can also be used to control access to a limited resource, such as database connections. A common example of an object pool is a thread-pool.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+
+["Creational patterns", "Prototype pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Prototype_pattern">Prototype pattern</a> provides a new object by copying an existing example. This allows specifying which object to create to be deferred to runtime and may provide a performance increase in situations where cloning is simple but construction is complex.`
+	,"designpatternsimage\prototype_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Creational patterns", "Singleton pattern.",
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Singleton_pattern">Singleton pattern</a> Ensures a class has only one instance, and provide a global point of access to it. See also the similar <a target="_blank" href="https://en.wikipedia.org/wiki/Multiton_pattern">Multiton pattern</a>`
+	,"designpatternsimage\singleton_uml.JPG", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Creational patterns", "Revealing module pattern.",
+`<a target="_blank" href="https://weblogs.asp.net/dwahlin/techniques-strategies-and-patterns-for-structuring-javascript-code-revealing-module-pattern">Revealing module pattern</a> is a javascript pattern allowing you to only expose the functions you want to.`
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+],
+
+/* ============================================== */	
+/* STRUCTURAL PATTERNS */
+/* ============================================== */
+
+
+["Structural patterns", "",
 ``
-	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],		
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
+],
+
+
+["Structural patterns", "",
+``
+	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],		
 ],
 
 
