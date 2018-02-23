@@ -106,3 +106,11 @@ body{
  font-weight: bold;
  text-decoration: none;
 }
+
+#footer_outer .pad{
+ padding: 10px;
+}
+
+#footer_outer span{
+ color: white;
+}
