@@ -1516,7 +1516,7 @@ sudo apt-get dist-upgrade
 
 
 ["Creational patterns", "Lazy initialization pattern.",
-`<a target="_blank" href="https://en.wikipedia.org/wiki/Lazy_initialization">Lazy initialization pattern</a> delays an expensive process, such as creation of an object, until when is first needed.`
+`<a target="_blank" href="https://en.wikipedia.org/wiki/Lazy_initialization">Lazy initialization pattern</a> delays an expensive process, such as creation of an object, until when it is first needed.`
 	,"", CONTENT_IS_RAW_HTML, SHOW_CONTENT, HIDE_IMAGE],
 
 
