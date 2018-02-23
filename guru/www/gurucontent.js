@@ -1546,7 +1546,7 @@ Class adapters extend the existing class, whereas object adapters wrap an instan
 ["Structural patterns", "Bridge pattern.",
 `<a target="_blank" href="https://en.wikipedia.org/wiki/Bridge_pattern">Bridge pattern.</a> decouples an abstraction from its implementation allowing both to vary independently. 
 
-The abstraction is not directly linked to some implementation class (as in an interface); Instead a concrete abstraction class exists which drives a concrete implementation class via the interface the concrete implementation class wishes to expose.`
+The abstraction is not directly linked to some implementation class (as in an interface); Instead a hierarchy of abstraction class can exist, these all drive the concrete implementation class via the interface the concrete implementation class wishes to expose.`
 	,`designpatternsimage/bridge_uml.JPG`, CONTENT_IS_RAW_HTML, SHOW_CONTENT, SHOW_IMAGE],
 
 
