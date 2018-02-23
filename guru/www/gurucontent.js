@@ -520,6 +520,13 @@ Example of concepts are (1) The inputs were used properly (2) The objects state 
 `Ideally this should be as simple as clicking a button within your IDE, or running a script or executable from the command-line. If multiple steps are required then these should be automated so re-running a suite of tests after each new build is a straightforward task.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 	
+	
+["Test driven development (TDD)", "Unit-tests should test just one thing.",
+`Using classes that are not mocks, stubs or built-in types in order to test a component is undesirable. Testing how a component interacts with others instead of what it returns or how its state changes is also undesirable. 
+
+However not testing a component sufficiently just because your trying to obey the advice above is a total code stink.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+	
 
 /* ============================================== */	
 /* ANTI PATTERNS */
@@ -1576,7 +1583,7 @@ The abstraction is not directly linked to some implementation class (as in an in
 
 
 /* ============================================== */	
-/* STRUCTURAL PATTERNS */
+/* BEHAVIOURAL PATTERNS */
 /* ============================================== */
 
 ["Behavioural patterns", "Blackboard pattern",
