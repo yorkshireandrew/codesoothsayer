@@ -152,6 +152,14 @@ function valid_content(){
 	return valid;
 }
 
+function change(){
+	var content_to_apply = choose_content();
+	apply_content(content_to_apply);
+	
+	var cookie = semi_random_index_generator.as_string();	
+	setCookie("semi_random_index_generator", cookie, 1);	
+}
+
 function load() {
 	resizeHandler();
 	if(!valid_content())return;
@@ -159,15 +167,26 @@ function load() {
 	guru_image_picker = new GuruImagePicker();
 	
 	semi_random_index_generator_cookie = getCookie("semi_random_index_generator");
-	if(semi_random_index_generator_cookie != null){
-		semi_random_index_generator.initialise_from_string(content.length, RANDOMNESS, semi_random_index_generator_cookie);
+	
+	if(semi_random_index_generator_cookie == null){
+		var cookie = semi_random_index_generator.as_string();	
+		setCookie("semi_random_index_generator", cookie, 1);
 	}
-	
+	else
+	{
+		semi_random_index_generator.initialise_from_string(content.length, RANDOMNESS, semi_random_index_generator_cookie);
+		
+		// If the generator looks sick create new generator
+		if(semi_random_index_generator.stack == undefined){
+			semi_random_index_generator = new SemiRandomIndexGenerator(content.length, RANDOMNESS);
+		}
+		if(semi_random_index_generator.stack.length == 0){
+			semi_random_index_generator = new SemiRandomIndexGenerator(content.length, RANDOMNESS);
+		}
+	}
+
 	var content_to_apply = choose_content();
-	apply_content(content_to_apply);
-	
-	var cookie = semi_random_index_generator.as_string();	
-	setCookie("semi_random_index_generator", cookie, 1);
+	apply_content(content_to_apply);	
 }
 
 window.onload = load;
