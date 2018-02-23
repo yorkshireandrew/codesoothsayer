@@ -406,7 +406,7 @@ Throwing an exception is another way of liberating the caller from dealing direc
 ["Software design", "Stand on the shoulders of giants then help lift them up.",
 `Mankind has always progressed by applying the discoveries of collogues or ancestors. If your  issue, problem or component feels like it may be a common one then check the open-source community to see if someone already has the answer. If the opportunity arises open-source your work or add to open-source projects so that you are helping the world flourish as well as yourself.
 
-Should you wish to contribute to this website you can do so via ***TODO***
+Should you wish to contribute to this website you can do so via <a target="_blank" href="https://github.com/yorkshireandrew/codesoothsayer">github</a>
 
 Balance this with the desire to minimise dependencies on a wide range of libraries and frameworks.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
