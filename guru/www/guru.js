@@ -1,11 +1,12 @@
 var TITLE_BORDER_RADIUS_RATIO = 0.02;
 var TITLE_FONT_SIZE_RATIO = 0.03;
 var SECTION_FONT_SIZE_RATIO = 0.0125;
-var INTERVAL_SECS = 10;
+var INTERVAL_SECS = 5*60;
 var RANDOMNESS = 0.3;
 
 var semi_random_index_generator = new SemiRandomIndexGenerator(content.length, RANDOMNESS);
 var guru_image_picker = null;
+var timer = null;
 
 class Content{
 	constructor(selected_content){
@@ -157,7 +158,9 @@ function change(){
 	apply_content(content_to_apply);
 	
 	var cookie = semi_random_index_generator.as_string();	
-	setCookie("semi_random_index_generator", cookie, 1);	
+	setCookie("semi_random_index_generator", cookie, 1);
+	
+	timer = setTimeout(change, INTERVAL_SECS * 1000);
 }
 
 function load() {
@@ -186,7 +189,9 @@ function load() {
 	}
 
 	var content_to_apply = choose_content();
-	apply_content(content_to_apply);	
+	apply_content(content_to_apply);
+	
+	timer = setTimeout(change, INTERVAL_SECS * 1000);
 }
 
 window.onload = load;
