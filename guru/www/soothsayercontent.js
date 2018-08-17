@@ -848,7 +848,7 @@ Tells people reading the caller what the method expects and hints about the corr
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],	
 	
 	
-["Clean-code tips", "",
+["Clean-code tips", "Encode the state being altered into the method name.",
 `Methods such as:	
 fullThrottle()
 Tells readers of the call precisely what state on the object is being changed, and what it is changing to.`
@@ -899,6 +899,11 @@ Tells readers of the call precisely what state on the object is being changed, a
 `
 Non-static methods can be extended using polymorphism, whereas static methods cannot. That said static methods may be the appropriate choice if either the class is deliberately stateless or the method is not closely associated to a specific instance or the data it works on (such as Math.max)`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+
+["Clean-code tips", "Simplify boolean expressions.",
+`Use De-Morgans theorem and add cleanly named properties or methods that invert the existing boolean properties if it makes the code easier to read. For example: request.loaded AND request.valid reads much better than: NOT(request.loading OR NOT request.valid)`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+
 
 	
 /* ============================================== */	
@@ -1020,6 +1025,11 @@ Throttling or dynamically configuring live services may also be worth considerin
 ["The coding process", "Remember to commit little and often.",
 `A series of small commits that have well considered commit messages is far easier to follow than one huge commit which alters dozens of files and has a more general commit message. Small commits makes loosing work less likely and gives colleagues visibility of your progress. `
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+
+["The coding process", "Keep your tools clean and sharp.",
+`They are the eyes by which you see or the hands by which you manipulate your live system data. Ensure they are kept up to date with schema changes and api endpoint changes. Before you go live test they work well on live-like data`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+
 	
 	
 /* ============================================== */	
@@ -1494,6 +1504,15 @@ sudo apt-get dist-upgrade
 ["Philosophy", "Code is something developers discover, not something developers own.",
 `All arrangements of realizable processes existed as a possibility in the universe before it was written down by a developer. Knowledge of discovered code should be shared so if that developer leaves, dies or goes on holiday so it does not become lost to mankind.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+
+["Philosophy", "If you have already reached a level of two amber lights, think before proceeding.",
+`Research into the cause of major disasters such as the Buncefield fire and Chernobyl indicate they are the result of multiple smaller failures that each raised a warning but operators choose to continue. Consider this before undertaking major operational changes or releases.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+
+["Philosophy", "If you are not a fighter pilot then do not behave like one.",
+`Research into air crashes caused by human error has discovered often they are due to a single  person taking complete control rather than leveraging the availability, knowledge and talents of the whole flight crew. If things are not going well then its time to communicate and work as a team.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+
 
 
 /* ============================================== */	
