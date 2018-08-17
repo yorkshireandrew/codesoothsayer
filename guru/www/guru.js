@@ -191,7 +191,7 @@ function load() {
 	var content_to_apply = choose_content();
 	apply_content(content_to_apply);
 	
-	timer = setTimeout(change, INTERVAL_SECS * 1000);
+	if(timer == null)timer = setTimeout(change, INTERVAL_SECS * 1000);
 }
 
 window.onload = load;
