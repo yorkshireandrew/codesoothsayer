@@ -527,6 +527,12 @@ Example of concepts are (1) The inputs were used properly (2) The objects state 
 However not testing a component sufficiently just because your trying to obey the advice above is a total code stink.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 	
+["Test driven development (TDD)", "Most complex electronic systems ship with JTag test-hooks."
+`JTag is an (minimal) amount of additional electronics that ships in an electronic product that allows it to be completely and efficiently tested and diagnosed.
+
+Consider shipping code with some test-hooks if these will allow you to test how it works, for example under load, on slower platforms or in unreliable congested networks.`
+	,"img/jtag.png", ESCAPE_HTML, SHOW_CONTENT, SHOW_IMAGE],
+	
 
 /* ============================================== */	
 /* ANTI PATTERNS */
@@ -1029,8 +1035,14 @@ Throttling or dynamically configuring live services may also be worth considerin
 ["The coding process", "Keep your tools clean and sharp.",
 `They are the eyes by which you see or the hands by which you manipulate your live system data. Ensure they are kept up to date with schema changes and api endpoint changes. Before you go live test they work well on live-like data`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
-
 	
+["The coding process", "Know and care when things start.",
+`Record the time that processes, scripts and tools are started, you may require this information later. Consider logging or displaying these times automatically.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
+	
+["The coding process", "Questioning the existing architecture is healthy and evaluate proposed changes scientifically",
+`All imagined architectures have some value, these should be tested and assessed on their risks and merits in a logical and scientific manner, rather than solely on the distinction of the people who proposed them.`
+	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 	
 /* ============================================== */	
 /* CONCURRENCY */
