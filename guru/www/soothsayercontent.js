@@ -527,12 +527,11 @@ Example of concepts are (1) The inputs were used properly (2) The objects state 
 However not testing a component sufficiently just because your trying to obey the advice above is a total code stink.`
 	,"", ESCAPE_HTML, SHOW_CONTENT, HIDE_IMAGE],
 	
-["Test driven development (TDD)", "Most complex electronic systems ship with JTag test-hooks."
+["Test driven development (TDD)", "Most complex electronic systems ship with JTag test-hooks.",
 `JTag is an (minimal) amount of additional electronics that ships in an electronic product that allows it to be completely and efficiently tested and diagnosed.
 
-Consider shipping code with some test-hooks if these will allow you to test how it works, for example under load, on slower platforms or in unreliable congested networks.`
+Cars too are usually fitted with an engine diagnostics port.  Consider shipping code with some test-hooks if these will allow you to test it works in the live environment correctly.`
 	,"img/jtag.png", ESCAPE_HTML, SHOW_CONTENT, SHOW_IMAGE],
-	
 
 /* ============================================== */	
 /* ANTI PATTERNS */
