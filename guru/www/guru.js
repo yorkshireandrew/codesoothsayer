@@ -154,6 +154,7 @@ function valid_content(){
 }
 
 function change(){
+	clearTimeout(timer);
 	var content_to_apply = choose_content();
 	apply_content(content_to_apply);
 	
